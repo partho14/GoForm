@@ -3,27 +3,85 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E13FDBA295425160064038A /* MyServeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDB9295425160064038A /* MyServeyViewController.swift */; };
+		0E13FDBC2954282A0064038A /* MyServeyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */; };
+		0E13FDBE295438490064038A /* MyServeyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */; };
+		0E13FDC0295438660064038A /* MyServeyDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDBF295438660064038A /* MyServeyDetailsTableViewCell.swift */; };
+		0E13FDC2295489AA0064038A /* MainServeyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDC1295489AA0064038A /* MainServeyListViewController.swift */; };
+		0E13FDC429548A830064038A /* MainServeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDC329548A830064038A /* MainServeyListTableViewCell.swift */; };
+		0E1757552941A6060000A081 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1757542941A6060000A081 /* MainViewController.swift */; };
+		0E1757582941AAC50000A081 /* MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1757572941AAC50000A081 /* MainViewTableViewCell.swift */; };
+		0E17575A2941B15A0000A081 /* FormBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1757592941B15A0000A081 /* FormBuilderViewController.swift */; };
+		0E17575C2941B2670000A081 /* FormBuilderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17575B2941B2670000A081 /* FormBuilderTableViewCell.swift */; };
+		0E17575E294209CB0000A081 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E17575D294209CB0000A081 /* DemoTableViewCell.swift */; };
+		0E1EE4BF29405DE700C7C8B5 /* NavigationDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4BE29405DE700C7C8B5 /* NavigationDrawer.swift */; };
+		0E1EE4C129405E1800C7C8B5 /* NavigationDrawerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C029405E1800C7C8B5 /* NavigationDrawerOptions.swift */; };
+		0E1EE4C329407BB100C7C8B5 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C229407BB100C7C8B5 /* NavViewController.swift */; };
+		0E1EE4C52940C99400C7C8B5 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */; };
+		0E65761029430B01005C2A74 /* FullFormViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */; };
+		0E65761229430D50005C2A74 /* FullFormViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */; };
+		0E65761529435EEB005C2A74 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E65761429435EEB005C2A74 /* User.storyboard */; };
+		0E65761729435F27005C2A74 /* AllFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761629435F27005C2A74 /* AllFormViewController.swift */; };
+		0E65761929435F53005C2A74 /* FormFillupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761829435F53005C2A74 /* FormFillupViewController.swift */; };
 		0E6738A3293F27540046153C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6738A2293F27540046153C /* AppDelegate.swift */; };
-		0E6738A5293F27540046153C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6738A4293F27540046153C /* SceneDelegate.swift */; };
-		0E6738A7293F27540046153C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6738A6293F27540046153C /* ViewController.swift */; };
 		0E6738AA293F27540046153C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738A8293F27540046153C /* Main.storyboard */; };
 		0E6738AC293F27550046153C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738AB293F27550046153C /* Assets.xcassets */; };
 		0E6738AF293F27550046153C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738AD293F27550046153C /* LaunchScreen.storyboard */; };
+		0E709337295573A3008530F8 /* SubServeyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E709336295573A3008530F8 /* SubServeyListViewController.swift */; };
+		0E709339295573B9008530F8 /* SubServeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */; };
+		0E70933B29557D59008530F8 /* ServeyListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */; };
+		0E70933D29557D75008530F8 /* ServeyListDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */; };
+		0E9072F12946EDF8003DB998 /* FormFillupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */; };
+		0EF93467293F385A004DA840 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EF93466293F385A004DA840 /* GoogleService-Info.plist */; };
+		0EF9346B293F6784004DA840 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9346A293F6784004DA840 /* LoginViewController.swift */; };
+		0EF93471293F7060004DA840 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF93470293F7060004DA840 /* HomeViewController.swift */; };
+		0EF93473293F7308004DA840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF93472293F7308004DA840 /* ViewController.swift */; };
+		DFA28E5979466E11BEE28738 /* Pods_GoForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F685F5F1FCC4B730C496AD /* Pods_GoForm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E13FDB9295425160064038A /* MyServeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyViewController.swift; sourceTree = "<group>"; };
+		0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyTableViewCell.swift; sourceTree = "<group>"; };
+		0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyDetailsViewController.swift; sourceTree = "<group>"; };
+		0E13FDBF295438660064038A /* MyServeyDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		0E13FDC1295489AA0064038A /* MainServeyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServeyListViewController.swift; sourceTree = "<group>"; };
+		0E13FDC329548A830064038A /* MainServeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServeyListTableViewCell.swift; sourceTree = "<group>"; };
+		0E1757542941A6060000A081 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0E1757572941AAC50000A081 /* MainViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCell.swift; sourceTree = "<group>"; };
+		0E1757592941B15A0000A081 /* FormBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBuilderViewController.swift; sourceTree = "<group>"; };
+		0E17575B2941B2670000A081 /* FormBuilderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBuilderTableViewCell.swift; sourceTree = "<group>"; };
+		0E17575D294209CB0000A081 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		0E1EE4BE29405DE700C7C8B5 /* NavigationDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawer.swift; sourceTree = "<group>"; };
+		0E1EE4C029405E1800C7C8B5 /* NavigationDrawerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerOptions.swift; sourceTree = "<group>"; };
+		0E1EE4C229407BB100C7C8B5 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFormViewViewController.swift; sourceTree = "<group>"; };
+		0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFormViewTableViewCell.swift; sourceTree = "<group>"; };
+		0E65761429435EEB005C2A74 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		0E65761629435F27005C2A74 /* AllFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFormViewController.swift; sourceTree = "<group>"; };
+		0E65761829435F53005C2A74 /* FormFillupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupViewController.swift; sourceTree = "<group>"; };
 		0E67389F293F27540046153C /* GoForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6738A2293F27540046153C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E6738A4293F27540046153C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E6738A6293F27540046153C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E6738A9293F27540046153C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E6738AB293F27550046153C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6738AE293F27550046153C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6738B0293F27550046153C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E709336295573A3008530F8 /* SubServeyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServeyListViewController.swift; sourceTree = "<group>"; };
+		0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServeyListTableViewCell.swift; sourceTree = "<group>"; };
+		0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeyListDetailsViewController.swift; sourceTree = "<group>"; };
+		0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeyListDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupTableViewCell.swift; sourceTree = "<group>"; };
+		0EF93466293F385A004DA840 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EF9346A293F6784004DA840 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0EF93470293F7060004DA840 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0EF93472293F7308004DA840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60F685F5F1FCC4B730C496AD /* Pods_GoForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9B357A4DDAE2D067483A98 /* Pods-GoForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoForm.release.xcconfig"; path = "Target Support Files/Pods-GoForm/Pods-GoForm.release.xcconfig"; sourceTree = "<group>"; };
+		9FF3E9D3392F486046252857 /* Pods-GoForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoForm.debug.xcconfig"; path = "Target Support Files/Pods-GoForm/Pods-GoForm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +89,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFA28E5979466E11BEE28738 /* Pods_GoForm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1757562941AA9A0000A081 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0E1757572941AAC50000A081 /* MainViewTableViewCell.swift */,
+				0E17575B2941B2670000A081 /* FormBuilderTableViewCell.swift */,
+				0E17575D294209CB0000A081 /* DemoTableViewCell.swift */,
+				0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0E65761329435EC2005C2A74 /* Servey */ = {
+			isa = PBXGroup;
+			children = (
+				0E9072EF2946EDDD003DB998 /* Cell */,
+				0E65761429435EEB005C2A74 /* User.storyboard */,
+				0E65761629435F27005C2A74 /* AllFormViewController.swift */,
+				0E65761829435F53005C2A74 /* FormFillupViewController.swift */,
+				0E13FDB9295425160064038A /* MyServeyViewController.swift */,
+				0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */,
+				0E13FDC1295489AA0064038A /* MainServeyListViewController.swift */,
+				0E709336295573A3008530F8 /* SubServeyListViewController.swift */,
+				0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */,
+			);
+			path = Servey;
+			sourceTree = "<group>";
+		};
 		0E673896293F27540046153C = {
 			isa = PBXGroup;
 			children = (
 				0E6738A1293F27540046153C /* GoForm */,
 				0E6738A0293F27540046153C /* Products */,
+				BC87E4919E6AF3AC0D3B1BEC /* Frameworks */,
+				40E56E2FDD38EE09C247BEAE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +144,56 @@
 		0E6738A1293F27540046153C /* GoForm */ = {
 			isa = PBXGroup;
 			children = (
+				0E65761329435EC2005C2A74 /* Servey */,
+				0E1757562941AA9A0000A081 /* Cell */,
 				0E6738A2293F27540046153C /* AppDelegate.swift */,
-				0E6738A4293F27540046153C /* SceneDelegate.swift */,
-				0E6738A6293F27540046153C /* ViewController.swift */,
+				0EF9346A293F6784004DA840 /* LoginViewController.swift */,
+				0EF93470293F7060004DA840 /* HomeViewController.swift */,
+				0EF93472293F7308004DA840 /* ViewController.swift */,
+				0E1EE4BE29405DE700C7C8B5 /* NavigationDrawer.swift */,
+				0E1EE4C029405E1800C7C8B5 /* NavigationDrawerOptions.swift */,
+				0E1EE4C229407BB100C7C8B5 /* NavViewController.swift */,
+				0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */,
+				0E1757542941A6060000A081 /* MainViewController.swift */,
+				0E1757592941B15A0000A081 /* FormBuilderViewController.swift */,
+				0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */,
 				0E6738A8293F27540046153C /* Main.storyboard */,
 				0E6738AB293F27550046153C /* Assets.xcassets */,
 				0E6738AD293F27550046153C /* LaunchScreen.storyboard */,
 				0E6738B0293F27550046153C /* Info.plist */,
+				0EF93466293F385A004DA840 /* GoogleService-Info.plist */,
 			);
 			path = GoForm;
+			sourceTree = "<group>";
+		};
+		0E9072EF2946EDDD003DB998 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */,
+				0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */,
+				0E13FDBF295438660064038A /* MyServeyDetailsTableViewCell.swift */,
+				0E13FDC329548A830064038A /* MainServeyListTableViewCell.swift */,
+				0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */,
+				0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		40E56E2FDD38EE09C247BEAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FF3E9D3392F486046252857 /* Pods-GoForm.debug.xcconfig */,
+				9C9B357A4DDAE2D067483A98 /* Pods-GoForm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC87E4919E6AF3AC0D3B1BEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60F685F5F1FCC4B730C496AD /* Pods_GoForm.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E6738B3293F27550046153C /* Build configuration list for PBXNativeTarget "GoForm" */;
 			buildPhases = (
+				F4D9C1949F9DE7DCAC75938D /* [CP] Check Pods Manifest.lock */,
 				0E67389B293F27540046153C /* Sources */,
 				0E67389C293F27540046153C /* Frameworks */,
 				0E67389D293F27540046153C /* Resources */,
+				A6B4A5DDBCA7CDF08F73CC05 /* [CP] Embed Pods Frameworks */,
+				0A571189BC7682107B5708C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -103,7 +235,7 @@
 				};
 			};
 			buildConfigurationList = 0E67389A293F27540046153C /* Build configuration list for PBXProject "GoForm" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E6738AF293F27550046153C /* LaunchScreen.storyboard in Resources */,
+				0E65761529435EEB005C2A74 /* User.storyboard in Resources */,
+				0EF93467293F385A004DA840 /* GoogleService-Info.plist in Resources */,
 				0E6738AC293F27550046153C /* Assets.xcassets in Resources */,
 				0E6738AA293F27540046153C /* Main.storyboard in Resources */,
 			);
@@ -133,14 +267,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A571189BC7682107B5708C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B4A5DDBCA7CDF08F73CC05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoForm/Pods-GoForm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4D9C1949F9DE7DCAC75938D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoForm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E67389B293F27540046153C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6738A7293F27540046153C /* ViewController.swift in Sources */,
+				0E1EE4BF29405DE700C7C8B5 /* NavigationDrawer.swift in Sources */,
+				0E65761229430D50005C2A74 /* FullFormViewTableViewCell.swift in Sources */,
+				0E65761729435F27005C2A74 /* AllFormViewController.swift in Sources */,
+				0E1EE4C329407BB100C7C8B5 /* NavViewController.swift in Sources */,
+				0E65761029430B01005C2A74 /* FullFormViewViewController.swift in Sources */,
+				0E9072F12946EDF8003DB998 /* FormFillupTableViewCell.swift in Sources */,
+				0EF9346B293F6784004DA840 /* LoginViewController.swift in Sources */,
+				0E1EE4C52940C99400C7C8B5 /* LoadingIndicatorView.swift in Sources */,
 				0E6738A3293F27540046153C /* AppDelegate.swift in Sources */,
-				0E6738A5293F27540046153C /* SceneDelegate.swift in Sources */,
+				0E13FDBC2954282A0064038A /* MyServeyTableViewCell.swift in Sources */,
+				0E70933D29557D75008530F8 /* ServeyListDetailsTableViewCell.swift in Sources */,
+				0E709339295573B9008530F8 /* SubServeyListTableViewCell.swift in Sources */,
+				0E13FDC429548A830064038A /* MainServeyListTableViewCell.swift in Sources */,
+				0EF93471293F7060004DA840 /* HomeViewController.swift in Sources */,
+				0E1757552941A6060000A081 /* MainViewController.swift in Sources */,
+				0EF93473293F7308004DA840 /* ViewController.swift in Sources */,
+				0E17575A2941B15A0000A081 /* FormBuilderViewController.swift in Sources */,
+				0E13FDBE295438490064038A /* MyServeyDetailsViewController.swift in Sources */,
+				0E65761929435F53005C2A74 /* FormFillupViewController.swift in Sources */,
+				0E709337295573A3008530F8 /* SubServeyListViewController.swift in Sources */,
+				0E13FDBA295425160064038A /* MyServeyViewController.swift in Sources */,
+				0E1EE4C129405E1800C7C8B5 /* NavigationDrawerOptions.swift in Sources */,
+				0E1757582941AAC50000A081 /* MainViewTableViewCell.swift in Sources */,
+				0E70933B29557D59008530F8 /* ServeyListDetailsViewController.swift in Sources */,
+				0E17575E294209CB0000A081 /* DemoTableViewCell.swift in Sources */,
+				0E13FDC0295438660064038A /* MyServeyDetailsTableViewCell.swift in Sources */,
+				0E13FDC2295489AA0064038A /* MainServeyListViewController.swift in Sources */,
+				0E17575C2941B2670000A081 /* FormBuilderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +409,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -251,7 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -282,11 +500,16 @@
 		};
 		0E6738B4293F27550046153C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF3E9D3392F486046252857 /* Pods-GoForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z67P58P2GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoForm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -301,6 +524,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.annanovas.GoForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = An_Development;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,11 +534,16 @@
 		};
 		0E6738B5293F27550046153C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9B357A4DDAE2D067483A98 /* Pods-GoForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z67P58P2GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoForm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,6 +558,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.annanovas.GoForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = An_Development;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
