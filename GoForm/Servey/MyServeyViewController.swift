@@ -2,7 +2,7 @@
 //  MyServeyViewController.swift
 //  GoForm
 //
-//  Created by Partha Pratim Das on 22/12/22.
+//  Created by Annanovas IT Ltd on 22/12/22.
 //
 
 import Foundation
@@ -14,7 +14,17 @@ class MyServeyViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emptyformLbl: UILabel!
+    @IBOutlet weak var emptyformLbl: UILabel!{
+        didSet{
+            self.emptyformLbl.font = UIFont(name: "Barlow-Bold", size: 16.0)
+        }
+    }
+    
+    @IBOutlet weak var headerTittleTextLbl: UILabel!{
+        didSet{
+            self.headerTittleTextLbl.font = UIFont(name: "Barlow-Bold", size: 20.0)
+        }
+    }
     
     var questionArray: [DataSnapshot] = []
     var docRef: DocumentReference!
@@ -23,7 +33,7 @@ class MyServeyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        Database.database().reference().removeAllObservers()
         questionArray.removeAll()
         LoadingIndicatorView.show()
         docRef = Firestore.firestore().document("")
@@ -37,14 +47,18 @@ class MyServeyViewController: UIViewController {
             self.getData()
         }
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        Database.database().reference().removeAllObservers()
+    }
     
     @IBAction func backBtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func getData(){
         questionArray.removeAll()
-        self.ref.child("\(appDelegate.uniqueID!)/Servey").queryOrderedByKey().observe(.value){ (snapshot) in
+        self.ref.child("UserDetails/\(appDelegate.uniqueID!)/mysubmit").queryOrderedByKey().observe(.value){ (snapshot) in
             self.questionArray.removeAll()
             for event in snapshot.children.allObjects {
 
@@ -74,23 +88,26 @@ extension MyServeyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyServeyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyServeyTableViewCell", for: indexPath) as! MyServeyTableViewCell
         if questionArray.count > 0 {
-            let index = self.questionArray[indexPath.row].key.index(self.questionArray[indexPath.row].key.startIndex, offsetBy: 21)
+            let index = self.questionArray[indexPath.row].key.index(self.questionArray[indexPath.row].key.startIndex, offsetBy: 28)
             let subString = self.questionArray[indexPath.row].key.substring(from: index)
-            cell.formName.text = subString as? String
+            cell.fullFormName.text = subString as? String
+            
+            cell.formNameFirstLetter.text = subString.first?.description
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "User", bundle: nil)
-        let myServeyDetailsViewController = storyboard.instantiateViewController(withIdentifier: "MyServeyDetailsViewController") as? MyServeyDetailsViewController
-        appDelegate.currentNav?.pushViewController(myServeyDetailsViewController!, animated: true)
-        appDelegate.formNameText = self.questionArray[indexPath.row].key as? String
-        self.present(myServeyDetailsViewController!, animated: true, completion: nil)
+        appDelegate.isFillupFormViewingView = true
+        let storyboard = UIStoryboard(name: "Form", bundle: nil)
+        let formFillupViewController = storyboard.instantiateViewController(withIdentifier: "FormFillupViewController") as? FormFillupViewController
+        appDelegate.currentNav?.pushViewController(formFillupViewController!, animated: true)
+        appDelegate.isFillupFormViewingFormName = self.questionArray[indexPath.row].key as? String
+        self.navigationController?.pushViewController(formFillupViewController!, animated: true)
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

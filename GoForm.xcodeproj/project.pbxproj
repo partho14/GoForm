@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E11AC8229825550003AFBD5 /* DropdownOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11AC8129825550003AFBD5 /* DropdownOptionTableViewCell.swift */; };
+		0E11AC842982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11AC832982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift */; };
 		0E13FDBA295425160064038A /* MyServeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDB9295425160064038A /* MyServeyViewController.swift */; };
 		0E13FDBC2954282A0064038A /* MyServeyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */; };
 		0E13FDBE295438490064038A /* MyServeyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */; };
@@ -22,21 +24,66 @@
 		0E1EE4C129405E1800C7C8B5 /* NavigationDrawerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C029405E1800C7C8B5 /* NavigationDrawerOptions.swift */; };
 		0E1EE4C329407BB100C7C8B5 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C229407BB100C7C8B5 /* NavViewController.swift */; };
 		0E1EE4C52940C99400C7C8B5 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */; };
-		0E65761029430B01005C2A74 /* FullFormViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */; };
-		0E65761229430D50005C2A74 /* FullFormViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */; };
+		0E218FFD2990C46F00F58892 /* SingleChoiceSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E218FFC2990C46F00F58892 /* SingleChoiceSubTableViewCell.swift */; };
+		0E218FFF2991277A00F58892 /* MultipleChoiceSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E218FFE2991277A00F58892 /* MultipleChoiceSubTableViewCell.swift */; };
+		0E3C416A2983A401009EDE89 /* MultipleChoiceOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C41692983A401009EDE89 /* MultipleChoiceOptionTableViewCell.swift */; };
+		0E3C416C2983BB39009EDE89 /* NavViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C416B2983BB39009EDE89 /* NavViewCollectionViewCell.swift */; };
+		0E3C416E2983F50B009EDE89 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C416D2983F50B009EDE89 /* SignUpViewController.swift */; };
+		0E4AE56E29891D6300EBF506 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AE56D29891D6300EBF506 /* UserListViewController.swift */; };
+		0E4AE57029891D8000EBF506 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4AE56F29891D8000EBF506 /* UserListTableViewCell.swift */; };
+		0E4AE588298940CE00EBF506 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE583298940C500EBF506 /* Inter-Bold.ttf */; };
+		0E4AE589298940CE00EBF506 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE584298940C700EBF506 /* Inter-SemiBold.ttf */; };
+		0E4AE58A298940CE00EBF506 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE585298940C900EBF506 /* Inter-Medium.ttf */; };
+		0E4AE58B298940CE00EBF506 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE586298940CC00EBF506 /* Inter-Black.ttf */; };
+		0E4AE58C298940CE00EBF506 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE587298940CE00EBF506 /* Inter-Regular.ttf */; };
+		0E4AE592298940EE00EBF506 /* Barlow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE58D298940E500EBF506 /* Barlow-Bold.ttf */; };
+		0E4AE593298940EE00EBF506 /* Barlow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE58E298940E700EBF506 /* Barlow-Medium.ttf */; };
+		0E4AE594298940EE00EBF506 /* Barlow-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE58F298940E900EBF506 /* Barlow-Black.ttf */; };
+		0E4AE595298940EE00EBF506 /* Barlow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE590298940EB00EBF506 /* Barlow-Regular.ttf */; };
+		0E4AE596298940EE00EBF506 /* Barlow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4AE591298940EE00EBF506 /* Barlow-SemiBold.ttf */; };
 		0E65761529435EEB005C2A74 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E65761429435EEB005C2A74 /* User.storyboard */; };
 		0E65761729435F27005C2A74 /* AllFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761629435F27005C2A74 /* AllFormViewController.swift */; };
-		0E65761929435F53005C2A74 /* FormFillupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E65761829435F53005C2A74 /* FormFillupViewController.swift */; };
+		0E66D9A62987E14A00913D7E /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E66D9A52987E14A00913D7E /* ForgorPasswordViewController.swift */; };
 		0E6738A3293F27540046153C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6738A2293F27540046153C /* AppDelegate.swift */; };
 		0E6738AA293F27540046153C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738A8293F27540046153C /* Main.storyboard */; };
 		0E6738AC293F27550046153C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738AB293F27550046153C /* Assets.xcassets */; };
 		0E6738AF293F27550046153C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6738AD293F27550046153C /* LaunchScreen.storyboard */; };
+		0E6909CD29ACDC4800C069B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6909CC29ACDC4800C069B5 /* GoogleService-Info.plist */; };
+		0E6B5C69299F93B800EC5ED3 /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B5C68299F93B800EC5ED3 /* KYDrawerController.swift */; };
+		0E6B5C6B299F93D300EC5ED3 /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B5C6A299F93D300EC5ED3 /* KYEmbedDrawerControllerSegue.swift */; };
+		0E6B5C6D299F93DE00EC5ED3 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B5C6C299F93DE00EC5ED3 /* KYEmbedMainControllerSegue.swift */; };
+		0E707B3329680A89000B5BBB /* PdfFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E707B3229680A89000B5BBB /* PdfFileViewController.swift */; };
 		0E709337295573A3008530F8 /* SubServeyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E709336295573A3008530F8 /* SubServeyListViewController.swift */; };
 		0E709339295573B9008530F8 /* SubServeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */; };
 		0E70933B29557D59008530F8 /* ServeyListDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */; };
 		0E70933D29557D75008530F8 /* ServeyListDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */; };
-		0E9072F12946EDF8003DB998 /* FormFillupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */; };
-		0EF93467293F385A004DA840 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EF93466293F385A004DA840 /* GoogleService-Info.plist */; };
+		0E8EA070298A806200C5E139 /* UploadFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EA06F298A806200C5E139 /* UploadFileTableViewCell.swift */; };
+		0E935B5A2994F8B4002C4864 /* Form.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E935B592994F8B4002C4864 /* Form.storyboard */; };
+		0E935B5C2994F8EC002C4864 /* FormFillupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B5B2994F8EC002C4864 /* FormFillupViewController.swift */; };
+		0E935B5F2994F984002C4864 /* FormFillupTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B5E2994F984002C4864 /* FormFillupTextFieldTableViewCell.swift */; };
+		0E935B612994F99B002C4864 /* FormFillupUploadFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B602994F99B002C4864 /* FormFillupUploadFileTableViewCell.swift */; };
+		0E935B632994F9AE002C4864 /* FormFillupDropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B622994F9AE002C4864 /* FormFillupDropdownTableViewCell.swift */; };
+		0E935B652994F9C7002C4864 /* FormFillupDatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B642994F9C7002C4864 /* FormFillupDatePickerTableViewCell.swift */; };
+		0E935B672994F9DB002C4864 /* FormFillupSingleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B662994F9DB002C4864 /* FormFillupSingleChoiceTableViewCell.swift */; };
+		0E935B692994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B682994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift */; };
+		0E935B6B29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B6A29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift */; };
+		0E935B6D29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E935B6C29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift */; };
+		0EA0D835297AC26A00A6A0E6 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0D834297AC26A00A6A0E6 /* ThemeManager.swift */; };
+		0EAB4AB929A6194400C63876 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB4AB829A6194400C63876 /* Shared.storyboard */; };
+		0EAB4ABB29A61A8B00C63876 /* SharedFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB4ABA29A61A8B00C63876 /* SharedFormViewController.swift */; };
+		0EAB4ABE29A61AE300C63876 /* SharedFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB4ABD29A61AE300C63876 /* SharedFormTableViewCell.swift */; };
+		0EADEFE9295EDE80002EDB20 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEFE8295EDE80002EDB20 /* MyDatePicker.swift */; };
+		0EADEFEB295EE551002EDB20 /* CreateDateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EADEFEA295EE551002EDB20 /* CreateDateTimeViewController.swift */; };
+		0EB832DC298B8B9200069052 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB832DB298B8B9200069052 /* DatePickerTableViewCell.swift */; };
+		0EB832E0298B8F9D00069052 /* DropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB832DF298B8F9D00069052 /* DropdownTableViewCell.swift */; };
+		0EC241DA298D29D700308EB5 /* SingleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC241D9298D29D700308EB5 /* SingleChoiceTableViewCell.swift */; };
+		0EC241DC298D29EF00308EB5 /* MultipleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC241DB298D29EF00308EB5 /* MultipleChoiceTableViewCell.swift */; };
+		0ECC7A7129A74A87005196B9 /* FormServeyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC7A7029A74A87005196B9 /* FormServeyListViewController.swift */; };
+		0ECC7A7329A74F1C005196B9 /* FormServeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC7A7229A74F1C005196B9 /* FormServeyListTableViewCell.swift */; };
+		0ECD4B4A297FC5AB00CE388B /* SelectOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD4B49297FC5AB00CE388B /* SelectOptionCollectionViewCell.swift */; };
+		0ECD98F12962FD1A009E1B20 /* SharedPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD98F02962FD1A009E1B20 /* SharedPeopleViewController.swift */; };
+		0ECD98F32962FEE6009E1B20 /* SharedPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD98F22962FEE6009E1B20 /* SharedPeopleTableViewCell.swift */; };
+		0EF5746629659B8700636D37 /* FileUploadDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5746529659B8700636D37 /* FileUploadDemoViewController.swift */; };
 		0EF9346B293F6784004DA840 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9346A293F6784004DA840 /* LoginViewController.swift */; };
 		0EF93471293F7060004DA840 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF93470293F7060004DA840 /* HomeViewController.swift */; };
 		0EF93473293F7308004DA840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF93472293F7308004DA840 /* ViewController.swift */; };
@@ -44,6 +91,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E11AC8129825550003AFBD5 /* DropdownOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownOptionTableViewCell.swift; sourceTree = "<group>"; };
+		0E11AC832982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceOptionTableViewCell.swift; sourceTree = "<group>"; };
 		0E13FDB9295425160064038A /* MyServeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyViewController.swift; sourceTree = "<group>"; };
 		0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyTableViewCell.swift; sourceTree = "<group>"; };
 		0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyDetailsViewController.swift; sourceTree = "<group>"; };
@@ -59,23 +108,70 @@
 		0E1EE4C029405E1800C7C8B5 /* NavigationDrawerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerOptions.swift; sourceTree = "<group>"; };
 		0E1EE4C229407BB100C7C8B5 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
-		0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFormViewViewController.swift; sourceTree = "<group>"; };
-		0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFormViewTableViewCell.swift; sourceTree = "<group>"; };
+		0E218FFC2990C46F00F58892 /* SingleChoiceSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceSubTableViewCell.swift; sourceTree = "<group>"; };
+		0E218FFE2991277A00F58892 /* MultipleChoiceSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceSubTableViewCell.swift; sourceTree = "<group>"; };
+		0E3C41692983A401009EDE89 /* MultipleChoiceOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceOptionTableViewCell.swift; sourceTree = "<group>"; };
+		0E3C416B2983BB39009EDE89 /* NavViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E3C416D2983F50B009EDE89 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0E4AE56D29891D6300EBF506 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		0E4AE56F29891D8000EBF506 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		0E4AE583298940C500EBF506 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		0E4AE584298940C700EBF506 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		0E4AE585298940C900EBF506 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		0E4AE586298940CC00EBF506 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		0E4AE587298940CE00EBF506 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		0E4AE58D298940E500EBF506 /* Barlow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Bold.ttf"; sourceTree = "<group>"; };
+		0E4AE58E298940E700EBF506 /* Barlow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Medium.ttf"; sourceTree = "<group>"; };
+		0E4AE58F298940E900EBF506 /* Barlow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Black.ttf"; sourceTree = "<group>"; };
+		0E4AE590298940EB00EBF506 /* Barlow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-Regular.ttf"; sourceTree = "<group>"; };
+		0E4AE591298940EE00EBF506 /* Barlow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Barlow-SemiBold.ttf"; sourceTree = "<group>"; };
 		0E65761429435EEB005C2A74 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		0E65761629435F27005C2A74 /* AllFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFormViewController.swift; sourceTree = "<group>"; };
-		0E65761829435F53005C2A74 /* FormFillupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupViewController.swift; sourceTree = "<group>"; };
+		0E66D9A52987E14A00913D7E /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		0E67389F293F27540046153C /* GoForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6738A2293F27540046153C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E6738A9293F27540046153C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E6738AB293F27550046153C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6738AE293F27550046153C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6738B0293F27550046153C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6909CC29ACDC4800C069B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E6B5C68299F93B800EC5ED3 /* KYDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYDrawerController.swift; sourceTree = "<group>"; };
+		0E6B5C6A299F93D300EC5ED3 /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		0E6B5C6C299F93DE00EC5ED3 /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		0E6B5C6E299F93E600EC5ED3 /* KYDrawerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYDrawerController.h; sourceTree = "<group>"; };
+		0E707B3229680A89000B5BBB /* PdfFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfFileViewController.swift; sourceTree = "<group>"; };
 		0E709336295573A3008530F8 /* SubServeyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServeyListViewController.swift; sourceTree = "<group>"; };
 		0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubServeyListTableViewCell.swift; sourceTree = "<group>"; };
 		0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeyListDetailsViewController.swift; sourceTree = "<group>"; };
 		0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeyListDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupTableViewCell.swift; sourceTree = "<group>"; };
-		0EF93466293F385A004DA840 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E8EA06F298A806200C5E139 /* UploadFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B592994F8B4002C4864 /* Form.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Form.storyboard; sourceTree = "<group>"; };
+		0E935B5B2994F8EC002C4864 /* FormFillupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupViewController.swift; sourceTree = "<group>"; };
+		0E935B5E2994F984002C4864 /* FormFillupTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B602994F99B002C4864 /* FormFillupUploadFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupUploadFileTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B622994F9AE002C4864 /* FormFillupDropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupDropdownTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B642994F9C7002C4864 /* FormFillupDatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupDatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B662994F9DB002C4864 /* FormFillupSingleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupSingleChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B682994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupMultipleChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B6A29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupSingleChoiceSubTableViewCell.swift; sourceTree = "<group>"; };
+		0E935B6C29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFillupMultipleChoiceSubTableViewCell.swift; sourceTree = "<group>"; };
+		0EA0D834297AC26A00A6A0E6 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		0EAB4AB829A6194400C63876 /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
+		0EAB4ABA29A61A8B00C63876 /* SharedFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFormViewController.swift; sourceTree = "<group>"; };
+		0EAB4ABD29A61AE300C63876 /* SharedFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFormTableViewCell.swift; sourceTree = "<group>"; };
+		0EADEFE8295EDE80002EDB20 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
+		0EADEFEA295EE551002EDB20 /* CreateDateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDateTimeViewController.swift; sourceTree = "<group>"; };
+		0EB832DB298B8B9200069052 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		0EB832DF298B8F9D00069052 /* DropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTableViewCell.swift; sourceTree = "<group>"; };
+		0EC241D9298D29D700308EB5 /* SingleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		0EC241DB298D29EF00308EB5 /* MultipleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		0ECB13B2296C215100720919 /* GoForm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoForm.entitlements; sourceTree = "<group>"; };
+		0ECC7A7029A74A87005196B9 /* FormServeyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormServeyListViewController.swift; sourceTree = "<group>"; };
+		0ECC7A7229A74F1C005196B9 /* FormServeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormServeyListTableViewCell.swift; sourceTree = "<group>"; };
+		0ECD4B49297FC5AB00CE388B /* SelectOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		0ECD98F02962FD1A009E1B20 /* SharedPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPeopleViewController.swift; sourceTree = "<group>"; };
+		0ECD98F22962FEE6009E1B20 /* SharedPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		0EF5746529659B8700636D37 /* FileUploadDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadDemoViewController.swift; sourceTree = "<group>"; };
 		0EF9346A293F6784004DA840 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0EF93470293F7060004DA840 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0EF93472293F7308004DA840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,12 +195,35 @@
 		0E1757562941AA9A0000A081 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0E8EA06E298A7F1B00C5E139 /* FormBuilderCell */,
 				0E1757572941AAC50000A081 /* MainViewTableViewCell.swift */,
 				0E17575B2941B2670000A081 /* FormBuilderTableViewCell.swift */,
 				0E17575D294209CB0000A081 /* DemoTableViewCell.swift */,
-				0E65761129430D50005C2A74 /* FullFormViewTableViewCell.swift */,
+				0ECD98F22962FEE6009E1B20 /* SharedPeopleTableViewCell.swift */,
+				0ECD4B49297FC5AB00CE388B /* SelectOptionCollectionViewCell.swift */,
+				0E11AC8129825550003AFBD5 /* DropdownOptionTableViewCell.swift */,
+				0E11AC832982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift */,
+				0E3C41692983A401009EDE89 /* MultipleChoiceOptionTableViewCell.swift */,
+				0E3C416B2983BB39009EDE89 /* NavViewCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0E4AE58029893D6C00EBF506 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0E4AE58F298940E900EBF506 /* Barlow-Black.ttf */,
+				0E4AE58D298940E500EBF506 /* Barlow-Bold.ttf */,
+				0E4AE58E298940E700EBF506 /* Barlow-Medium.ttf */,
+				0E4AE590298940EB00EBF506 /* Barlow-Regular.ttf */,
+				0E4AE591298940EE00EBF506 /* Barlow-SemiBold.ttf */,
+				0E4AE586298940CC00EBF506 /* Inter-Black.ttf */,
+				0E4AE583298940C500EBF506 /* Inter-Bold.ttf */,
+				0E4AE585298940C900EBF506 /* Inter-Medium.ttf */,
+				0E4AE587298940CE00EBF506 /* Inter-Regular.ttf */,
+				0E4AE584298940C700EBF506 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0E65761329435EC2005C2A74 /* Servey */ = {
@@ -113,12 +232,13 @@
 				0E9072EF2946EDDD003DB998 /* Cell */,
 				0E65761429435EEB005C2A74 /* User.storyboard */,
 				0E65761629435F27005C2A74 /* AllFormViewController.swift */,
-				0E65761829435F53005C2A74 /* FormFillupViewController.swift */,
 				0E13FDB9295425160064038A /* MyServeyViewController.swift */,
 				0E13FDBD295438490064038A /* MyServeyDetailsViewController.swift */,
 				0E13FDC1295489AA0064038A /* MainServeyListViewController.swift */,
 				0E709336295573A3008530F8 /* SubServeyListViewController.swift */,
 				0E70933A29557D59008530F8 /* ServeyListDetailsViewController.swift */,
+				0E707B3229680A89000B5BBB /* PdfFileViewController.swift */,
+				0E4AE56D29891D6300EBF506 /* UserListViewController.swift */,
 			);
 			path = Servey;
 			sourceTree = "<group>";
@@ -144,6 +264,11 @@
 		0E6738A1293F27540046153C /* GoForm */ = {
 			isa = PBXGroup;
 			children = (
+				0E6B5C67299F93A600EC5ED3 /* Drawer */,
+				0E4AE58029893D6C00EBF506 /* Fonts */,
+				0ECB13B2296C215100720919 /* GoForm.entitlements */,
+				0EAB4AB729A618E600C63876 /* SharedFormSection */,
+				0E935B582994F88E002C4864 /* FormFillupSection */,
 				0E65761329435EC2005C2A74 /* Servey */,
 				0E1757562941AA9A0000A081 /* Cell */,
 				0E6738A2293F27540046153C /* AppDelegate.swift */,
@@ -156,25 +281,101 @@
 				0E1EE4C42940C99400C7C8B5 /* LoadingIndicatorView.swift */,
 				0E1757542941A6060000A081 /* MainViewController.swift */,
 				0E1757592941B15A0000A081 /* FormBuilderViewController.swift */,
-				0E65760F29430B01005C2A74 /* FullFormViewViewController.swift */,
+				0EADEFEA295EE551002EDB20 /* CreateDateTimeViewController.swift */,
+				0ECD98F02962FD1A009E1B20 /* SharedPeopleViewController.swift */,
+				0EF5746529659B8700636D37 /* FileUploadDemoViewController.swift */,
+				0E3C416D2983F50B009EDE89 /* SignUpViewController.swift */,
+				0E66D9A52987E14A00913D7E /* ForgorPasswordViewController.swift */,
 				0E6738A8293F27540046153C /* Main.storyboard */,
 				0E6738AB293F27550046153C /* Assets.xcassets */,
 				0E6738AD293F27550046153C /* LaunchScreen.storyboard */,
 				0E6738B0293F27550046153C /* Info.plist */,
-				0EF93466293F385A004DA840 /* GoogleService-Info.plist */,
+				0E6909CC29ACDC4800C069B5 /* GoogleService-Info.plist */,
+				0EADEFE8295EDE80002EDB20 /* MyDatePicker.swift */,
+				0EA0D834297AC26A00A6A0E6 /* ThemeManager.swift */,
 			);
 			path = GoForm;
+			sourceTree = "<group>";
+		};
+		0E6B5C67299F93A600EC5ED3 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				0E6B5C68299F93B800EC5ED3 /* KYDrawerController.swift */,
+				0E6B5C6A299F93D300EC5ED3 /* KYEmbedDrawerControllerSegue.swift */,
+				0E6B5C6C299F93DE00EC5ED3 /* KYEmbedMainControllerSegue.swift */,
+				0E6B5C6E299F93E600EC5ED3 /* KYDrawerController.h */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		0E8EA06E298A7F1B00C5E139 /* FormBuilderCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E8EA06F298A806200C5E139 /* UploadFileTableViewCell.swift */,
+				0EB832DB298B8B9200069052 /* DatePickerTableViewCell.swift */,
+				0EB832DF298B8F9D00069052 /* DropdownTableViewCell.swift */,
+				0EC241D9298D29D700308EB5 /* SingleChoiceTableViewCell.swift */,
+				0EC241DB298D29EF00308EB5 /* MultipleChoiceTableViewCell.swift */,
+				0E218FFC2990C46F00F58892 /* SingleChoiceSubTableViewCell.swift */,
+				0E218FFE2991277A00F58892 /* MultipleChoiceSubTableViewCell.swift */,
+			);
+			path = FormBuilderCell;
 			sourceTree = "<group>";
 		};
 		0E9072EF2946EDDD003DB998 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				0E9072F02946EDF8003DB998 /* FormFillupTableViewCell.swift */,
 				0E13FDBB2954282A0064038A /* MyServeyTableViewCell.swift */,
 				0E13FDBF295438660064038A /* MyServeyDetailsTableViewCell.swift */,
 				0E13FDC329548A830064038A /* MainServeyListTableViewCell.swift */,
 				0E709338295573B9008530F8 /* SubServeyListTableViewCell.swift */,
 				0E70933C29557D75008530F8 /* ServeyListDetailsTableViewCell.swift */,
+				0E4AE56F29891D8000EBF506 /* UserListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0E935B582994F88E002C4864 /* FormFillupSection */ = {
+			isa = PBXGroup;
+			children = (
+				0E935B5D2994F91C002C4864 /* Cell */,
+				0E935B592994F8B4002C4864 /* Form.storyboard */,
+				0E935B5B2994F8EC002C4864 /* FormFillupViewController.swift */,
+				0ECC7A7029A74A87005196B9 /* FormServeyListViewController.swift */,
+			);
+			path = FormFillupSection;
+			sourceTree = "<group>";
+		};
+		0E935B5D2994F91C002C4864 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0E935B5E2994F984002C4864 /* FormFillupTextFieldTableViewCell.swift */,
+				0E935B602994F99B002C4864 /* FormFillupUploadFileTableViewCell.swift */,
+				0E935B622994F9AE002C4864 /* FormFillupDropdownTableViewCell.swift */,
+				0E935B642994F9C7002C4864 /* FormFillupDatePickerTableViewCell.swift */,
+				0E935B662994F9DB002C4864 /* FormFillupSingleChoiceTableViewCell.swift */,
+				0E935B682994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift */,
+				0E935B6A29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift */,
+				0E935B6C29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift */,
+				0ECC7A7229A74F1C005196B9 /* FormServeyListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0EAB4AB729A618E600C63876 /* SharedFormSection */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB4ABC29A61A9500C63876 /* Cell */,
+				0EAB4AB829A6194400C63876 /* Shared.storyboard */,
+				0EAB4ABA29A61A8B00C63876 /* SharedFormViewController.swift */,
+			);
+			path = SharedFormSection;
+			sourceTree = "<group>";
+		};
+		0EAB4ABC29A61A9500C63876 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB4ABD29A61AE300C63876 /* SharedFormTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -257,11 +458,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4AE588298940CE00EBF506 /* Inter-Bold.ttf in Resources */,
+				0E4AE58B298940CE00EBF506 /* Inter-Black.ttf in Resources */,
 				0E6738AF293F27550046153C /* LaunchScreen.storyboard in Resources */,
 				0E65761529435EEB005C2A74 /* User.storyboard in Resources */,
-				0EF93467293F385A004DA840 /* GoogleService-Info.plist in Resources */,
+				0E4AE58A298940CE00EBF506 /* Inter-Medium.ttf in Resources */,
+				0E4AE595298940EE00EBF506 /* Barlow-Regular.ttf in Resources */,
+				0E4AE594298940EE00EBF506 /* Barlow-Black.ttf in Resources */,
+				0EAB4AB929A6194400C63876 /* Shared.storyboard in Resources */,
+				0E4AE592298940EE00EBF506 /* Barlow-Bold.ttf in Resources */,
+				0E4AE58C298940CE00EBF506 /* Inter-Regular.ttf in Resources */,
+				0E935B5A2994F8B4002C4864 /* Form.storyboard in Resources */,
+				0E4AE596298940EE00EBF506 /* Barlow-SemiBold.ttf in Resources */,
+				0E6909CD29ACDC4800C069B5 /* GoogleService-Info.plist in Resources */,
 				0E6738AC293F27550046153C /* Assets.xcassets in Resources */,
 				0E6738AA293F27540046153C /* Main.storyboard in Resources */,
+				0E4AE593298940EE00EBF506 /* Barlow-Medium.ttf in Resources */,
+				0E4AE589298940CE00EBF506 /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,32 +545,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E1EE4BF29405DE700C7C8B5 /* NavigationDrawer.swift in Sources */,
-				0E65761229430D50005C2A74 /* FullFormViewTableViewCell.swift in Sources */,
+				0EAB4ABE29A61AE300C63876 /* SharedFormTableViewCell.swift in Sources */,
+				0E218FFF2991277A00F58892 /* MultipleChoiceSubTableViewCell.swift in Sources */,
+				0E935B612994F99B002C4864 /* FormFillupUploadFileTableViewCell.swift in Sources */,
+				0E935B6B29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift in Sources */,
+				0E3C416C2983BB39009EDE89 /* NavViewCollectionViewCell.swift in Sources */,
+				0E935B6D29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift in Sources */,
+				0ECC7A7329A74F1C005196B9 /* FormServeyListTableViewCell.swift in Sources */,
+				0E6B5C69299F93B800EC5ED3 /* KYDrawerController.swift in Sources */,
+				0EAB4ABB29A61A8B00C63876 /* SharedFormViewController.swift in Sources */,
 				0E65761729435F27005C2A74 /* AllFormViewController.swift in Sources */,
+				0E8EA070298A806200C5E139 /* UploadFileTableViewCell.swift in Sources */,
 				0E1EE4C329407BB100C7C8B5 /* NavViewController.swift in Sources */,
-				0E65761029430B01005C2A74 /* FullFormViewViewController.swift in Sources */,
-				0E9072F12946EDF8003DB998 /* FormFillupTableViewCell.swift in Sources */,
+				0ECC7A7129A74A87005196B9 /* FormServeyListViewController.swift in Sources */,
 				0EF9346B293F6784004DA840 /* LoginViewController.swift in Sources */,
+				0E3C416E2983F50B009EDE89 /* SignUpViewController.swift in Sources */,
 				0E1EE4C52940C99400C7C8B5 /* LoadingIndicatorView.swift in Sources */,
 				0E6738A3293F27540046153C /* AppDelegate.swift in Sources */,
+				0EADEFE9295EDE80002EDB20 /* MyDatePicker.swift in Sources */,
+				0E4AE56E29891D6300EBF506 /* UserListViewController.swift in Sources */,
+				0E3C416A2983A401009EDE89 /* MultipleChoiceOptionTableViewCell.swift in Sources */,
+				0EC241DC298D29EF00308EB5 /* MultipleChoiceTableViewCell.swift in Sources */,
 				0E13FDBC2954282A0064038A /* MyServeyTableViewCell.swift in Sources */,
 				0E70933D29557D75008530F8 /* ServeyListDetailsTableViewCell.swift in Sources */,
 				0E709339295573B9008530F8 /* SubServeyListTableViewCell.swift in Sources */,
+				0E935B692994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift in Sources */,
+				0E66D9A62987E14A00913D7E /* ForgorPasswordViewController.swift in Sources */,
+				0E11AC842982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift in Sources */,
 				0E13FDC429548A830064038A /* MainServeyListTableViewCell.swift in Sources */,
+				0E935B5F2994F984002C4864 /* FormFillupTextFieldTableViewCell.swift in Sources */,
+				0E935B632994F9AE002C4864 /* FormFillupDropdownTableViewCell.swift in Sources */,
 				0EF93471293F7060004DA840 /* HomeViewController.swift in Sources */,
 				0E1757552941A6060000A081 /* MainViewController.swift in Sources */,
 				0EF93473293F7308004DA840 /* ViewController.swift in Sources */,
+				0EF5746629659B8700636D37 /* FileUploadDemoViewController.swift in Sources */,
+				0EADEFEB295EE551002EDB20 /* CreateDateTimeViewController.swift in Sources */,
+				0EB832E0298B8F9D00069052 /* DropdownTableViewCell.swift in Sources */,
 				0E17575A2941B15A0000A081 /* FormBuilderViewController.swift in Sources */,
+				0E218FFD2990C46F00F58892 /* SingleChoiceSubTableViewCell.swift in Sources */,
+				0E935B672994F9DB002C4864 /* FormFillupSingleChoiceTableViewCell.swift in Sources */,
 				0E13FDBE295438490064038A /* MyServeyDetailsViewController.swift in Sources */,
-				0E65761929435F53005C2A74 /* FormFillupViewController.swift in Sources */,
+				0E707B3329680A89000B5BBB /* PdfFileViewController.swift in Sources */,
+				0EB832DC298B8B9200069052 /* DatePickerTableViewCell.swift in Sources */,
+				0ECD98F12962FD1A009E1B20 /* SharedPeopleViewController.swift in Sources */,
+				0ECD4B4A297FC5AB00CE388B /* SelectOptionCollectionViewCell.swift in Sources */,
 				0E709337295573A3008530F8 /* SubServeyListViewController.swift in Sources */,
 				0E13FDBA295425160064038A /* MyServeyViewController.swift in Sources */,
 				0E1EE4C129405E1800C7C8B5 /* NavigationDrawerOptions.swift in Sources */,
+				0EA0D835297AC26A00A6A0E6 /* ThemeManager.swift in Sources */,
+				0ECD98F32962FEE6009E1B20 /* SharedPeopleTableViewCell.swift in Sources */,
+				0E6B5C6B299F93D300EC5ED3 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				0E935B652994F9C7002C4864 /* FormFillupDatePickerTableViewCell.swift in Sources */,
+				0E4AE57029891D8000EBF506 /* UserListTableViewCell.swift in Sources */,
 				0E1757582941AAC50000A081 /* MainViewTableViewCell.swift in Sources */,
+				0E6B5C6D299F93DE00EC5ED3 /* KYEmbedMainControllerSegue.swift in Sources */,
+				0E935B5C2994F8EC002C4864 /* FormFillupViewController.swift in Sources */,
 				0E70933B29557D59008530F8 /* ServeyListDetailsViewController.swift in Sources */,
+				0EC241DA298D29D700308EB5 /* SingleChoiceTableViewCell.swift in Sources */,
 				0E17575E294209CB0000A081 /* DemoTableViewCell.swift in Sources */,
 				0E13FDC0295438660064038A /* MyServeyDetailsTableViewCell.swift in Sources */,
 				0E13FDC2295489AA0064038A /* MainServeyListViewController.swift in Sources */,
+				0E11AC8229825550003AFBD5 /* DropdownOptionTableViewCell.swift in Sources */,
 				0E17575C2941B2670000A081 /* FormBuilderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +753,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_ENTITLEMENTS = GoForm/GoForm.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,11 +762,16 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z67P58P2GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoForm/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This application wants to access your document folder";
+				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "This application wants to access your downlodes folder";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This application wants to access your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,7 +780,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.annanovas.GoForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = An_Development;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GoForm_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,6 +794,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				CODE_SIGN_ENTITLEMENTS = GoForm/GoForm.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -546,11 +803,16 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z67P58P2GF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoForm/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This application wants to access your document folder";
+				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "This application wants to access your downlodes folder";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This application wants to access your photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +821,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.annanovas.GoForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = An_Development;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = GoForm_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

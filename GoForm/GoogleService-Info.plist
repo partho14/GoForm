@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>366024794907-pvbd095jbl2ujnbdtp33jah1ta049087.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.366024794907-pvbd095jbl2ujnbdtp33jah1ta049087</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>366024794907-eubm02osfdja2qplk1fg22pv3b6toj71.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC88-LafDy5bHapSxOxMPwUAJubtO2PBDo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>366024794907</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.annanovas.GoForm</string>
+	<key>PROJECT_ID</key>
+	<string>goform-46a44</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goform-46a44.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:366024794907:ios:bd6046ff0f49f49ebea9be</string>
+	<key>DATABASE_URL</key>
+	<string>https://goform-46a44-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

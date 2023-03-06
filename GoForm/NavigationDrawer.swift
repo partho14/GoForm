@@ -47,6 +47,7 @@ class NavigationDrawer: NSObject
     */
     private func initNavigationDrawer()
     {
+        self.navigationDrawer.removeFromSuperview()
         //setting up container for navigation drawer
         navigationDrawerContainer.frame = CGRect(x: 0, y: 0, width: options.getAnchorViewWidth(), height: options.getAnchorViewHeight())
         navigationDrawerContainer.backgroundColor = UIColor.black.withAlphaComponent(0)

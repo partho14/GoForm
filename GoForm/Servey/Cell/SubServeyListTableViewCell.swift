@@ -2,7 +2,7 @@
 //  SubServeyListTableViewCell.swift
 //  GoForm
 //
-//  Created by Partha Pratim Das on 23/12/22.
+//  Created by Annanovas IT Ltd on 23/12/22.
 //
 
 import UIKit

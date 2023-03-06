@@ -2,7 +2,7 @@
 //  SubServeyListViewController.swift
 //  GoForm
 //
-//  Created by Partha Pratim Das on 23/12/22.
+//  Created by Annanovas IT Ltd on 23/12/22.
 //
 
 import UIKit
@@ -38,6 +38,11 @@ class SubServeyListViewController: UIViewController {
         }
 
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        appDelegate.pdfOpenFromServeyList = false
+        
+    }
     
     @IBAction func backBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -45,36 +50,71 @@ class SubServeyListViewController: UIViewController {
     func getData(){
         formNameArray.removeAll()
 
-        self.ref.child("\(appDelegate.uniqueID!)\(self.storeFormName)/Servey").queryOrderedByKey().observe(.value){ (snapshot) in
-                self.formNameArray.removeAll()
-                for event in snapshot.children.allObjects {
+        if appDelegate.isSharedSubServey == true{
+            
+            self.ref.child("\(self.storeFormName)/Servey").queryOrderedByKey().observe(.value){ (snapshot) in
+                    self.formNameArray.removeAll()
+                    for event in snapshot.children.allObjects {
 
-                    self.formNameArray.append(event as! DataSnapshot)
+                        self.formNameArray.append(event as! DataSnapshot)
+                        print(self.formNameArray)
+                    }
                     print(self.formNameArray)
+                    self.getUserNameData()
+                    //self.tableView.reloadData()
+                    //LoadingIndicatorView.hide()
                 }
-                print(self.formNameArray)
-                self.getUserNameData()
-                //self.tableView.reloadData()
-                //LoadingIndicatorView.hide()
-            }
-        
+
+        }else{
+            print(self.storeFormName)
+            print("\(appDelegate.uniqueID!)\(self.storeFormName)/Servey")
+            self.ref.child("\(appDelegate.uniqueID!)\(self.storeFormName)/Servey").queryOrderedByKey().observe(.value){ (snapshot) in
+                    self.formNameArray.removeAll()
+                    for event in snapshot.children.allObjects {
+
+                        self.formNameArray.append(event as! DataSnapshot)
+                        print(self.formNameArray)
+                    }
+                    print(self.formNameArray)
+                    self.getUserNameData()
+                    //self.tableView.reloadData()
+                    //LoadingIndicatorView.hide()
+                }
+
+        }
         //self.tableView.reloadData()
         //LoadingIndicatorView.hide()
     }
     
     func getUserNameData(){
         self.formUserNameArray.removeAll()
-        for i in 0 ..< (formNameArray.count){
-            self.ref.child("\(appDelegate.uniqueID!)\(self.storeFormName)/Servey").child(formNameArray[i].key).child("UniqueName").queryOrderedByKey().observe(.value){ (snapshot) in
-                    //self.formUserNameArray.removeAll()
-                    for event in snapshot.children.allObjects {
+        if appDelegate.isSharedSubServey == true{
+            for i in 0 ..< (formNameArray.count){
+                self.ref.child("\(self.storeFormName)/Servey").child(formNameArray[i].key).child("UniqueName").queryOrderedByKey().observe(.value){ (snapshot) in
+                        //self.formUserNameArray.removeAll()
+                        for event in snapshot.children.allObjects {
 
-                        self.formUserNameArray.append(event as! DataSnapshot)
+                            self.formUserNameArray.append(event as! DataSnapshot)
+                            print(self.formUserNameArray)
+                        }
                         print(self.formUserNameArray)
-                    }
-                    print(self.formUserNameArray)
-                    self.tableView.reloadData()
-                    LoadingIndicatorView.hide()
+                        self.tableView.reloadData()
+                        LoadingIndicatorView.hide()
+                }
+            }
+        }else{
+            for i in 0 ..< (formNameArray.count){
+                self.ref.child("\(appDelegate.uniqueID!)\(self.storeFormName)/Servey").child(formNameArray[i].key).child("UniqueName").queryOrderedByKey().observe(.value){ (snapshot) in
+                        //self.formUserNameArray.removeAll()
+                        for event in snapshot.children.allObjects {
+
+                            self.formUserNameArray.append(event as! DataSnapshot)
+                            print(self.formUserNameArray)
+                        }
+                        print(self.formUserNameArray)
+                        self.tableView.reloadData()
+                        LoadingIndicatorView.hide()
+                }
             }
         }
         self.tableView.reloadData()
@@ -103,6 +143,7 @@ extension SubServeyListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        appDelegate.pdfOpenFromServeyList = true
         appDelegate.formNameText = self.formNameArray[indexPath.row].key
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         let serveyListDetailsViewController = storyboard.instantiateViewController(withIdentifier: "ServeyListDetailsViewController") as? ServeyListDetailsViewController

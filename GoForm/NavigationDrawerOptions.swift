@@ -53,7 +53,7 @@ class NavigationDrawerOptions
     var navigationDrawerType = NavigationDrawerType.leftDrawer
     var navigationDrawerOpenDirection = NavigationDrawerOpenDirection.anyWhere
     var navigationDrawerEdgeSwipeDistance:CGFloat = 20.0
-    var navigationDrawerAnchorController : NavigationDrawerAnchorController = .parent
+    var navigationDrawerAnchorController : NavigationDrawerAnchorController = .window
     var navigationDrawerPaddingMultiplier:CGFloat = 1/8
     
     var drawerController:UIViewController?

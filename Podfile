@@ -15,6 +15,7 @@ pod 'Firebase/Crashlytics'
 pod 'Firebase/Database'
 pod 'Firebase/RemoteConfig'
 pod 'GoogleSignIn', '~> 5.0'
+pod 'DropDown', '2.3.2'
 
 
 end

@@ -2,7 +2,7 @@
 //  LoadingIndicatorView.swift
 //  GoForm
 //
-//  Created by Partha Pratim Das on 7/12/22.
+//  Created by Annanovas IT Ltd on 7/12/22.
 //
 import UIKit
 

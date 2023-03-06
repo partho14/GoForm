@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  GoForm
 //
-//  Created by Partha Pratim Das on 6/12/22.
+//  Created by Annanovas IT Ltd on 6/12/22.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import GoogleSignIn
 
 class HomeViewController: UIViewController {
     
-    var navigationDrawer:NavigationDrawer!
+//    var navigationDrawer:NavigationDrawer!
     var docRef: DocumentReference!
     var listener: ListenerRegistration!
     var ref = DatabaseReference.init()
@@ -32,16 +32,16 @@ class HomeViewController: UIViewController {
         docRef = Firestore.firestore().document("")
         self.ref = Database.database().reference()
         getData()
-        let options = NavigationDrawerOptions()
-        options.navigationDrawerType = .leftDrawer
-        options.navigationDrawerOpenDirection = .anyWhere
-        options.navigationDrawerYPosition = 0
-        options.navigationDrawerAnchorController = .window
-
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NavViewController") as! NavViewController
-        navigationDrawer = NavigationDrawer.instance
-        navigationDrawer.setup(withOptions: options)
-        navigationDrawer.setNavigationDrawerController(viewController: vc)
+//        let options = NavigationDrawerOptions()
+//        options.navigationDrawerType = .leftDrawer
+//        options.navigationDrawerOpenDirection = .anyWhere
+//        options.navigationDrawerYPosition = 0
+//        options.navigationDrawerAnchorController = .window
+//
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NavViewController") as! NavViewController
+//        navigationDrawer = NavigationDrawer.instance
+//        navigationDrawer.setup(withOptions: options)
+//        navigationDrawer.setNavigationDrawerController(viewController: vc)
     }
     
     func getData(){
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NavigationDrawer.instance.initialize(forViewController: self)
+//        NavigationDrawer.instance.initialize(forViewController: self)
         
         }
     func reloadData(fName: String, lName: String){
