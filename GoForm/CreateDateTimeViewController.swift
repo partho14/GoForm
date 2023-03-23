@@ -367,7 +367,7 @@ class CreateDateTimeViewController: UIViewController, UITextFieldDelegate {
         
         //dateFormatter.dateFormat = "dd MMM, yyyy"
         dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"		
         let expiredAt = dateFormatter.string(from: endAt!)
         
         let createdAt : Date? = dateFormatter.date(from: dateFormatter.string(from: Date()))

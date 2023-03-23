@@ -15,7 +15,7 @@ class FormBuilderViewController: UIViewController {
     
     let dropDown = DropDown()
     let dropdownOptionDropdown = DropDown()
-    let uploadDropDownMenuArray = ["Document", "PDF", "Word", "Excel"]
+    let uploadDropDownMenuArray = ["Image","Document", "PDF", "Word", "Excel"]
     var singleChoiceCount = 0
     var multipleChoiceCount = 0
     var isFullFormView: Bool = false
@@ -179,6 +179,10 @@ class FormBuilderViewController: UIViewController {
     //*****************************************************
     
     //**************************uploadContainer****************************************
+    var accecptableFileDefaultValue = "Single"
+    @IBOutlet weak var accecptableFileFirstImageView: UIImageView!
+    @IBOutlet weak var accecptableFileSecondImageView: UIImageView!
+    
     @IBOutlet weak var uploadTittleTextLbl: UILabel!{
         didSet{
             self.uploadTittleTextLbl.font = UIFont(name: "Barlow-Bold", size: 14.0)
@@ -206,6 +210,17 @@ class FormBuilderViewController: UIViewController {
             uploadFileSizeTextLbl.textAlignment = .center
         }
     }
+    
+    @IBOutlet weak var accecptableFileTextLbl: UILabel!{
+        didSet{
+            self.accecptableFileTextLbl.font = UIFont(name: "Barlow-Bold", size: 14.0)
+            accecptableFileTextLbl.numberOfLines = 1
+            accecptableFileTextLbl.sizeToFit()
+            accecptableFileTextLbl.adjustsFontSizeToFitWidth = true
+            accecptableFileTextLbl.textAlignment = .center
+        }
+    }
+    
     @IBOutlet weak var uploadTittleTextField: UITextField!
     @IBOutlet weak var uploadMaxSizeFileTextField: UITextField!
     @IBOutlet weak var uploadSubmitBtnView: UIView!
@@ -255,6 +270,17 @@ class FormBuilderViewController: UIViewController {
             uploadFileTypeView.layer.borderColor = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 1).cgColor
         }
     }
+    
+    @IBOutlet weak var accecptableFileBorderView: UIView!{
+        didSet{
+            accecptableFileBorderView.layer.borderWidth = 1
+            accecptableFileBorderView.layer.borderColor = UIColor(red: 247/255, green: 149/255, blue: 118/255, alpha: 1).cgColor
+            accecptableFileBorderView.layer.cornerRadius = 10
+            
+        }
+    }
+    
+    
     //**********************************************************
     
     //*************DatePickerContainer***************************
@@ -622,29 +648,13 @@ class FormBuilderViewController: UIViewController {
     
     func extractData(){
         for i in 0 ..< fullFormViewData.count{
-            if ((fullFormViewData[i].value(forKey: "Text")) != nil){
-                let textDataValue = fullFormViewData[i]["Text"]!
-                dynamicArray.append(["Text" : textDataValue])
-            }
-            else if ((fullFormViewData[i].value(forKey: "File")) != nil){
-                let textDataValue = fullFormViewData[i]["File"]!
-                dynamicArray.append(["File" : textDataValue])
-            }
-            else if ((fullFormViewData[i].value(forKey: "Date")) != nil){
-                let textDataValue = fullFormViewData[i]["Date"]!
-                dynamicArray.append(["Date" : textDataValue])
-            }
-            else if ((fullFormViewData[i].value(forKey: "Dropdown")) != nil){
-                let textDataValue = fullFormViewData[i]["Dropdown"]!
-                dynamicArray.append(["Dropdown" : textDataValue])
-            }
-            else if ((fullFormViewData[i].value(forKey: "SingleChoice")) != nil){
-                let textDataValue = fullFormViewData[i]["SingleChoice"]!
-                dynamicArray.append(["SingleChoice" : textDataValue])
+            let fullString = fullFormViewData[i].allKeys.first!  as! String
+            if ((fullFormViewData[i].value(forKey: "\(fullString)")) != nil){
+                let textDataValue = fullFormViewData[i]["\(fullString)"]!
+                dynamicArray.append(["\(fullFormViewData[i].allKeys.first!)" : textDataValue])
             }
             else{
-                let textDataValue = fullFormViewData[i]["MultipleChoice"]!
-                dynamicArray.append(["MultipleChoice" : textDataValue])
+            
             }
         }
         self.tableView.reloadData()
@@ -693,7 +703,8 @@ class FormBuilderViewController: UIViewController {
             else{
                 textFieldData.append([ "title" : "\(textFieldQuestionTextField.text!)"])
                 textFieldData.append([ "placeholder" : "\(textFieldPlaceholderTextField.text!)"])
-                dynamicArray.insert(["Text" : textFieldData], at: editIndexNumber)
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : textFieldData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 textFieldData.removeAll()
                 textFieldQuestionTextField.resignFirstResponder()
@@ -714,9 +725,11 @@ class FormBuilderViewController: UIViewController {
         
             }
             else{
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 textFieldData.append([ "title" : "\(textFieldQuestionTextField.text!)"])
                 textFieldData.append([ "placeholder" : "\(textFieldPlaceholderTextField.text!)"])
-                dynamicArray.append(["Text" : textFieldData])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_Text" : textFieldData])
                 textFieldData.removeAll()
                 textFieldQuestionTextField.resignFirstResponder()
                 textFieldPlaceholderTextField.resignFirstResponder()
@@ -759,7 +772,8 @@ class FormBuilderViewController: UIViewController {
             }else{
                 dropdownData.append(["title" : "\(dropdownQuestionTextField.text!)"])
                 dropdownData.append(["option" : dropdownOptionArray])
-                dynamicArray.insert(["Dropdown" : dropdownData], at: editIndexNumber)
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : dropdownData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 dropdownData.removeAll()
                 dropdownOptionArray.removeAll()
@@ -776,9 +790,11 @@ class FormBuilderViewController: UIViewController {
             if dropdownQuestionTextField.text?.count == 0 {
         
             }else{
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 dropdownData.append(["title" : "\(dropdownQuestionTextField.text!)"])
                 dropdownData.append(["option" : dropdownOptionArray])
-                dynamicArray.append(["Dropdown" : dropdownData])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_Dropdown" : dropdownData])
                 dropdownData.removeAll()
                 dropdownOptionArray.removeAll()
                 dropdownQuestionTextField.resignFirstResponder()
@@ -820,7 +836,9 @@ class FormBuilderViewController: UIViewController {
                 fileUploadData.append(["title" : "\(uploadTittleTextField.text!)"])
                 fileUploadData.append(["fileType" : "\(uploadFileTypeValueLbl.text!)"])
                 fileUploadData.append(["fileSize" : "\(uploadMaxSizeFileTextField.text!)"])
-                dynamicArray.insert(["File" : fileUploadData], at: editIndexNumber)
+                fileUploadData.append(["accecptableFile" : "\(accecptableFileDefaultValue)"])
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : fileUploadData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 fileUploadData.removeAll()
                 tableView.reloadData()
@@ -843,10 +861,13 @@ class FormBuilderViewController: UIViewController {
                 uploadTittleTextField.resignFirstResponder()
                 uploadFileTypeValueLbl.resignFirstResponder()
                 uploadMaxSizeFileTextField.resignFirstResponder()
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 fileUploadData.append(["title" : "\(uploadTittleTextField.text!)"])
                 fileUploadData.append(["fileType" : "\(uploadFileTypeValueLbl.text!)"])
                 fileUploadData.append(["fileSize" : "\(uploadMaxSizeFileTextField.text!)"])
-                dynamicArray.append(["File" : fileUploadData])
+                fileUploadData.append(["accecptableFile" : "\(accecptableFileDefaultValue)"])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_File" : fileUploadData])
                 fileUploadData.removeAll()
                 tableView.reloadData()
                 uploadContainer.alpha = 0
@@ -879,6 +900,18 @@ class FormBuilderViewController: UIViewController {
         dropDown.show()
     }
     
+    @IBAction func accecptableFileFirstBtnClicked(_ sender: Any) {
+        self.accecptableFileDefaultValue = "Single"
+        self.accecptableFileFirstImageView.image = UIImage(named:"radio_button_select")
+        self.accecptableFileSecondImageView.image = UIImage(named:"radio_button_unselect")
+    }
+    
+    @IBAction func accecptableFileSecondBtnClicked(_ sender: Any) {
+        self.accecptableFileDefaultValue = "Multiple"
+        self.accecptableFileFirstImageView.image = UIImage(named:"radio_button_unselect")
+        self.accecptableFileSecondImageView.image = UIImage(named:"radio_button_select")
+    }
+    
     //**************************************************************
     
     //**********************************DatePicker*****************
@@ -893,7 +926,8 @@ class FormBuilderViewController: UIViewController {
                 datePickerData.append(["title" : "\(datepickerTittleTextField.text!)"])
                 datePickerData.append(["dateFormat" : "\(dateFormatValue)"])
                 datePickerData.append(["defaultValue" : "\(datePickerDefaultValue)"])
-                dynamicArray.insert(["Date" : datePickerData], at: editIndexNumber)
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : datePickerData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 datePickerData.removeAll()
                 tableView.reloadData()
@@ -908,10 +942,12 @@ class FormBuilderViewController: UIViewController {
         
             }else{
                 datepickerTittleTextField.resignFirstResponder()
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 datePickerData.append(["title" : "\(datepickerTittleTextField.text!)"])
                 datePickerData.append(["dateFormat" : "\(dateFormatValue)"])
                 datePickerData.append(["defaultValue" : "\(datePickerDefaultValue)"])
-                dynamicArray.append(["Date" : datePickerData])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_Date" : datePickerData])
                 datePickerData.removeAll()
                 tableView.reloadData()
                 datepickerView.alpha = 0
@@ -969,7 +1005,8 @@ class FormBuilderViewController: UIViewController {
             }else{
                 singleChoiceData.append(["title" : "\(singleChoiceTittleTextField.text!)"])
                 singleChoiceData.append(["option" : singleChoiceOptionArray])
-                dynamicArray.insert(["SingleChoice" : singleChoiceData], at: editIndexNumber)
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : singleChoiceData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 singleChoiceData.removeAll()
                 singleChoiceOptionArray.removeAll()
@@ -986,9 +1023,11 @@ class FormBuilderViewController: UIViewController {
             if singleChoiceTittleTextField.text?.count == 0 {
         
             }else{
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 singleChoiceData.append(["title" : "\(singleChoiceTittleTextField.text!)"])
                 singleChoiceData.append(["option" : singleChoiceOptionArray])
-                dynamicArray.append(["SingleChoice" : singleChoiceData])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_SingleChoice" : singleChoiceData])
                 singleChoiceData.removeAll()
                 singleChoiceOptionArray.removeAll()
                 singleChoiceTittleTextField.resignFirstResponder()
@@ -1039,7 +1078,8 @@ class FormBuilderViewController: UIViewController {
             }else{
                 multipleChoiceData.append(["title" : "\(multipleChoiceTittleTextField.text!)"])
                 multipleChoiceData.append(["option" : multipleChoiceOptionArray])
-                dynamicArray.insert(["MultipleChoice" : multipleChoiceData], at: editIndexNumber)
+                let val = "\(dynamicArray[editIndexNumber].first!.key)"
+                dynamicArray.insert(["\(val)" : multipleChoiceData], at: editIndexNumber)
                 dynamicArray.remove(at: editIndexNumber + 1)
                 multipleChoiceData.removeAll()
                 multipleChoiceOptionArray.removeAll()
@@ -1056,9 +1096,11 @@ class FormBuilderViewController: UIViewController {
             if multipleChoiceTittleTextField.text?.count == 0 {
         
             }else{
+                var startDate = Date()
+                let startTimeStamp : Int = Int(startDate.timeIntervalSince1970)
                 multipleChoiceData.append(["title" : "\(multipleChoiceTittleTextField.text!)"])
                 multipleChoiceData.append(["option" : multipleChoiceOptionArray])
-                dynamicArray.append(["MultipleChoice" : multipleChoiceData])
+                dynamicArray.append(["\(appDelegate.uniqueID!)_\(startTimeStamp)_MultipleChoice" : multipleChoiceData])
                 multipleChoiceData.removeAll()
                 multipleChoiceOptionArray.removeAll()
                 multipleChoiceTittleTextField.resignFirstResponder()
@@ -1241,7 +1283,12 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
         if isFullFormView{
             if tableView == self.tableView{
                 if dynamicArray.count > 0{
-                    if (dynamicArray[indexPath.row]["Text"] != nil){
+                    let fullString = dynamicArray[indexPath.row].keys.first!
+                    var afterEqualsTo = ""
+                    if let index = fullString.range(of: "_", options: .backwards)?.upperBound {
+                        afterEqualsTo = String(fullString.suffix(from: index))
+                    }
+                    if ("\(afterEqualsTo)" == "Text"){
                         let cellTextField: FormBuilderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FormBuilderTableViewCell", for: indexPath) as! FormBuilderTableViewCell
                         cellTextField.ansTextField.alpha = 1
                         cellTextField.deteteButton.tag = indexPath.row + 1
@@ -1251,7 +1298,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellTextField.didUpdate = { [weak self] tag in
-                            var textDataValue = self?.dynamicArray[indexPath.row]["Text"]! as? [[String:Any]]
+                            var textDataValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.textFieldQuestionTextField.text = (textDataValue?[0]["title"])! as? String
@@ -1260,7 +1307,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             textDataValue?.removeAll()
                             
                         }
-                        var textDataValue = dynamicArray[indexPath.row]["Text"]! as? [[String:Any]]
+                        var textDataValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         print((textDataValue?[0]["title"])! as! String)
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((textDataValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellTextField.questionName.text = stringWithExtraSpace
@@ -1272,7 +1319,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         textDataValue?.removeAll()
                         return cellTextField
                     }
-                    else if(dynamicArray[indexPath.row]["File"] != nil){
+                    else if("\(afterEqualsTo)" == "File"){
                         let cellFile: UploadFileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UploadFileTableViewCell", for: indexPath) as! UploadFileTableViewCell
                         cellFile.deleteBtn.tag = indexPath.row + 1
                         cellFile.editBtn.tag = indexPath.row + 1
@@ -1281,16 +1328,25 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellFile.didUpdate = { [weak self] tag in
-                            var fileUploadValue = self?.dynamicArray[indexPath.row]["File"]! as? [[String:Any]]
+                            var fileUploadValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.uploadTittleTextField.text = fileUploadValue?[0]["title"] as? String
                             self?.uploadMaxSizeFileTextField.text = (fileUploadValue?[2]["fileSize"]) as? String
                             self?.uploadContainer.alpha = 1
+                            if ((fileUploadValue?[3]["accecptableFile"])! as? String == "Single"){
+                                self?.accecptableFileFirstImageView.image = UIImage(named:"radio_button_select")
+                                self?.accecptableFileSecondImageView.image = UIImage(named:"radio_button_unselect")
+                            }else{
+                                self?.accecptableFileSecondImageView.image = UIImage(named:"radio_button_select")
+                                self?.accecptableFileFirstImageView.image = UIImage(named:"radio_button_unselect")
+                            }
                             fileUploadValue?.removeAll()
                         }
-                        var fileUploadValue = dynamicArray[indexPath.row]["File"]! as? [[String:Any]]
+                        var fileUploadValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         cellFile.uploadFileMaxSize.text = "Maximum Size \((fileUploadValue?[2]["fileSize"])! as! String)MB"
+
+                        
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((fileUploadValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellFile.fileUploadTittleLbl.text = stringWithExtraSpace
                         //cellFile.fileUploadTittleLbl.text = fileUploadValue?[0]["tittle"] as? String
@@ -1300,7 +1356,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         fileUploadValue?.removeAll()
                         return cellFile
                     }
-                    else if(dynamicArray[indexPath.row]["Date"] != nil){
+                    else if("\(afterEqualsTo)" == "Date"){
                         let cellDatepicker: DatePickerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DatePickerTableViewCell", for: indexPath) as! DatePickerTableViewCell
                         cellDatepicker.datePickerDeleteBtn.tag = indexPath.row + 1
                         cellDatepicker.datePickerEditBtn.tag = indexPath.row + 1
@@ -1309,7 +1365,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellDatepicker.didUpdate = { [weak self] tag in
-                            var datePickerValue = self?.dynamicArray[indexPath.row]["Date"]! as? [[String:Any]]
+                            var datePickerValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.datepickerTittleTextField.text = datePickerValue?[0]["title"] as? String
@@ -1330,7 +1386,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.datepickerView.alpha = 1
                             datePickerValue?.removeAll()
                         }
-                        var datePickerValue = dynamicArray[indexPath.row]["Date"]! as? [[String:Any]]
+                        var datePickerValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         cellDatepicker.dateTextField.text = (datePickerValue?[1]["dateFormat"])! as? String
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((datePickerValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellDatepicker.datepickerCellTittle.text = stringWithExtraSpace
@@ -1341,7 +1397,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         datePickerValue?.removeAll()
                         return cellDatepicker
                     }
-                    else if(dynamicArray[indexPath.row]["Dropdown"] != nil){
+                    else if("\(afterEqualsTo)" == "Dropdown"){
                         let cellDropdown: DropdownTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DropdownTableViewCell", for: indexPath) as! DropdownTableViewCell
                         cellDropdown.dropdownEditBtn.tag = indexPath.row + 1
                         cellDropdown.dropdownDeleteBtn.tag = indexPath.row + 1
@@ -1351,7 +1407,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellDropdown.didUpdate = { [weak self] tag in
-                            var dropdownValue = self?.dynamicArray[indexPath.row]["Dropdown"]! as? [[String:Any]]
+                            var dropdownValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.dropdownQuestionTextField.text = dropdownValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1367,7 +1423,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             
                         }
                         
-                        var dropdownValue = dynamicArray[indexPath.row]["Dropdown"]! as? [[String:Any]]
+                        var dropdownValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((dropdownValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellDropdown.dropdownTittleLbl.text = stringWithExtraSpace
                         //cellDropdown.dropdownTittleLbl.text = dropdownValue?[0]["tittle"] as? String
@@ -1391,10 +1447,10 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         return cellDropdown
                     }
                     
-                    else if(dynamicArray[indexPath.row]["SingleChoice"] != nil){
+                    else if("\(afterEqualsTo)" == "SingleChoice"){
                         let cellSingleChoice: SingleChoiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SingleChoiceTableViewCell", for: indexPath) as! SingleChoiceTableViewCell
                         appDelegate.formBuilderSingleChoice = []
-                        var singleChoiceValue = dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                        var singleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((singleChoiceValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellSingleChoice.singleChoiceTittleLbl.text = stringWithExtraSpace
                         //cellSingleChoice.singleChoiceTittleLbl.text = singleChoiceValue?[0]["tittle"] as? String
@@ -1416,7 +1472,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellSingleChoice.didUpdate = { [weak self] tag in
-                            var singleChoiceEditValue = self?.dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                            var singleChoiceEditValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.singleChoiceTittleTextField.text = singleChoiceEditValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1434,10 +1490,10 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         return cellSingleChoice
                     }
                     
-                    else if(dynamicArray[indexPath.row]["MultipleChoice"] != nil){
+                    else if("\(afterEqualsTo)" == "MultipleChoice"){
                         let cellMultipleChoice: MultipleChoiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MultipleChoiceTableViewCell", for: indexPath) as! MultipleChoiceTableViewCell
                         appDelegate.formBuilderMultipleChoice = []
-                        var multipleChoiceValue = dynamicArray[indexPath.row]["MultipleChoice"]! as? [[String:Any]]
+                        var multipleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((multipleChoiceValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellMultipleChoice.multipleChoiceTittle.text = stringWithExtraSpace
                        // cellMultipleChoice.multipleChoiceTittle.text = multipleChoiceValue?[0]["tittle"] as? String
@@ -1459,7 +1515,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellMultipleChoice.didUpdate = { [weak self] tag in
-                            var multipleChoiceEditValue = self?.dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                            var multipleChoiceEditValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.multipleChoiceTittleTextField.text = multipleChoiceEditValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1560,7 +1616,12 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
         }else{
             if tableView == self.tableView{
                 if dynamicArray.count > 0{
-                    if (dynamicArray[indexPath.row]["Text"] != nil){
+                    let fullString = dynamicArray[indexPath.row].keys.first!
+                    var afterEqualsTo = ""
+                    if let index = fullString.range(of: "_", options: .backwards)?.upperBound {
+                        afterEqualsTo = String(fullString.suffix(from: index))
+                    }
+                    if ("\(afterEqualsTo)" == "Text"){
                         let cellTextField: FormBuilderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FormBuilderTableViewCell", for: indexPath) as! FormBuilderTableViewCell
                         cellTextField.ansTextField.alpha = 1
                         cellTextField.deteteButton.tag = indexPath.row + 1
@@ -1571,7 +1632,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         }
                         cellTextField.didUpdate = { [weak self] tag in
                             
-                            var textDataValue = self?.dynamicArray[indexPath.row]["Text"]! as? [[String:Any]]
+                            var textDataValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.textFieldQuestionTextField.text = (textDataValue?[0]["title"])! as? String
@@ -1579,7 +1640,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.textFieldContainer.alpha = 1
                             textDataValue?.removeAll()
                         }
-                        var textDataValue = dynamicArray[indexPath.row]["Text"]! as? [[String:Any]]
+                        var textDataValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         print((textDataValue?[0]["title"])! as! String)
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((textDataValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellTextField.questionName.text = stringWithExtraSpace
@@ -1591,7 +1652,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         textDataValue?.removeAll()
                         return cellTextField
                     }
-                    else if(dynamicArray[indexPath.row]["File"] != nil){
+                    else if("\(afterEqualsTo)" == "File"){
                         let cellFile: UploadFileTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UploadFileTableViewCell", for: indexPath) as! UploadFileTableViewCell
                         cellFile.deleteBtn.tag = indexPath.row + 1
                         cellFile.editBtn.tag = indexPath.row + 1
@@ -1600,7 +1661,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellFile.didUpdate = { [weak self] tag in
-                            var fileUploadValue = self?.dynamicArray[indexPath.row]["File"]! as? [[String:Any]]
+                            var fileUploadValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.uploadTittleTextField.text = fileUploadValue?[0]["title"] as? String
@@ -1608,7 +1669,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.uploadContainer.alpha = 1
                             fileUploadValue?.removeAll()
                         }
-                        var fileUploadValue = dynamicArray[indexPath.row]["File"]! as? [[String:Any]]
+                        var fileUploadValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         cellFile.uploadFileMaxSize.text = "Maximum Size \((fileUploadValue?[2]["fileSize"])! as! String)MB"
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((fileUploadValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellFile.fileUploadTittleLbl.text = stringWithExtraSpace
@@ -1619,7 +1680,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         fileUploadValue?.removeAll()
                         return cellFile
                     }
-                    else if(dynamicArray[indexPath.row]["Date"] != nil){
+                    else if("\(afterEqualsTo)" == "Date"){
                         let cellDatepicker: DatePickerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DatePickerTableViewCell", for: indexPath) as! DatePickerTableViewCell
                         cellDatepicker.datePickerDeleteBtn.tag = indexPath.row + 1
                         cellDatepicker.datePickerEditBtn.tag = indexPath.row + 1
@@ -1628,7 +1689,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellDatepicker.didUpdate = { [weak self] tag in
-                            var datePickerValue = self?.dynamicArray[indexPath.row]["Date"]! as? [[String:Any]]
+                            var datePickerValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
                             self?.datepickerTittleTextField.text = datePickerValue?[0]["title"] as? String
@@ -1649,7 +1710,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.datepickerView.alpha = 1
                             datePickerValue?.removeAll()
                         }
-                        var datePickerValue = dynamicArray[indexPath.row]["Date"]! as? [[String:Any]]
+                        var datePickerValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         cellDatepicker.dateTextField.text = (datePickerValue?[1]["dateFormat"])! as? String
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((datePickerValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellDatepicker.datepickerCellTittle.text = stringWithExtraSpace
@@ -1660,7 +1721,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         datePickerValue?.removeAll()
                         return cellDatepicker
                     }
-                    else if(dynamicArray[indexPath.row]["Dropdown"] != nil){
+                    else if("\(afterEqualsTo)" == "Dropdown"){
                         let cellDropdown: DropdownTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DropdownTableViewCell", for: indexPath) as! DropdownTableViewCell
                         cellDropdown.dropdownEditBtn.tag = indexPath.row + 1
                         cellDropdown.dropdownDeleteBtn.tag = indexPath.row + 1
@@ -1670,7 +1731,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellDropdown.didUpdate = { [weak self] tag in
-                            var dropdownValue = self?.dynamicArray[indexPath.row]["Dropdown"]! as? [[String:Any]]
+                            var dropdownValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.dropdownQuestionTextField.text = dropdownValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1684,7 +1745,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             dropdownValue?.removeAll()
                         }
                         
-                        var dropdownValue = dynamicArray[indexPath.row]["Dropdown"]! as? [[String:Any]]
+                        var dropdownValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((dropdownValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellDropdown.dropdownTittleLbl.text = stringWithExtraSpace
                         //cellDropdown.dropdownTittleLbl.text = dropdownValue?[0]["tittle"] as? String
@@ -1707,10 +1768,10 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         dropdownValue?.removeAll()
                         return cellDropdown
                     }
-                    else if(dynamicArray[indexPath.row]["SingleChoice"] != nil){
+                    else if("\(afterEqualsTo)" == "SingleChoice"){
                         let cellSingleChoice: SingleChoiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SingleChoiceTableViewCell", for: indexPath) as! SingleChoiceTableViewCell
                         appDelegate.formBuilderSingleChoice = []
-                        var singleChoiceValue = dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                        var singleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((singleChoiceValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellSingleChoice.singleChoiceTittleLbl.text = stringWithExtraSpace
                         //cellSingleChoice.singleChoiceTittleLbl.text = singleChoiceValue?[0]["tittle"] as? String
@@ -1732,7 +1793,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellSingleChoice.didUpdate = { [weak self] tag in
-                            var singleChoiceEditValue = self?.dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                            var singleChoiceEditValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.singleChoiceTittleTextField.text = singleChoiceEditValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1749,10 +1810,10 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                         singleChoiceValue?.removeAll()
                         return cellSingleChoice
                     }
-                    else if(dynamicArray[indexPath.row]["MultipleChoice"] != nil){
+                    else if("\(afterEqualsTo)" == "MultipleChoice"){
                         let cellMultipleChoice: MultipleChoiceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MultipleChoiceTableViewCell", for: indexPath) as! MultipleChoiceTableViewCell
                         appDelegate.formBuilderMultipleChoice = []
-                        var multipleChoiceValue = dynamicArray[indexPath.row]["MultipleChoice"]! as? [[String:Any]]
+                        var multipleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                         let stringWithExtraSpace: String = String(repeating: " ", count: 1) + "\((multipleChoiceValue?[0]["title"])!)" + String(repeating: " ", count: 2)
                         cellMultipleChoice.multipleChoiceTittle.text = stringWithExtraSpace
                         //cellMultipleChoice.multipleChoiceTittle.text = multipleChoiceValue?[0]["tittle"] as? String
@@ -1774,7 +1835,7 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
                             self?.tableView.reloadData()
                         }
                         cellMultipleChoice.didUpdate = { [weak self] tag in
-                            var multipleChoiceEditValue = self?.dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                            var multipleChoiceEditValue = self?.dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                             self?.multipleChoiceTittleTextField.text = multipleChoiceEditValue?[0]["title"] as? String
                             self?.isEdit = true
                             self?.editIndexNumber = tag - 1
@@ -1879,21 +1940,26 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
         
         if isFullFormView{
             if tableView == self.tableView{
-                if (dynamicArray[indexPath.row]["Text"] != nil){
+                let fullString = dynamicArray[indexPath.row].keys.first!
+                var afterEqualsTo = ""
+                if let index = fullString.range(of: "_", options: .backwards)?.upperBound {
+                    afterEqualsTo = String(fullString.suffix(from: index))
+                }
+                if ("\(afterEqualsTo)" == "Text"){
                     return 120
-                }else if (dynamicArray[indexPath.row]["File"] != nil){
+                }else if ("\(afterEqualsTo)" == "File"){
                     return 220
-                }else if (dynamicArray[indexPath.row]["Date"] != nil){
+                }else if ("\(afterEqualsTo)" == "Date"){
                     return 120
                     
-                }else if (dynamicArray[indexPath.row]["Dropdown"] != nil){
+                }else if ("\(afterEqualsTo)" == "Dropdown"){
                     return 120
-                }else if (dynamicArray[indexPath.row]["SingleChoice"] != nil){
-                    let singleChoiceValue = dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                }else if ("\(afterEqualsTo)" == "SingleChoice"){
+                    let singleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                     let singleChoiceOptionValue = singleChoiceValue![1]["option"]! as? [String]
                     return 80 + CGFloat(40 * singleChoiceOptionValue!.count)
-                }else if (dynamicArray[indexPath.row]["MultipleChoice"] != nil){
-                    let multipleChoiceValue = dynamicArray[indexPath.row]["MultipleChoice"]! as? [[String:Any]]
+                }else if ("\(afterEqualsTo)" == "MultipleChoice"){
+                    let multipleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                     let multipleChoiceOptionValue = multipleChoiceValue![1]["option"]! as? [String]
                     return 80 + CGFloat(40 * multipleChoiceOptionValue!.count)
                 }else{
@@ -1914,21 +1980,27 @@ extension FormBuilderViewController: UITableViewDelegate, UITableViewDataSource,
             }
         }else{
             if tableView == self.tableView{
-                if (dynamicArray[indexPath.row]["Text"] != nil){
+                let fullString = dynamicArray[indexPath.row].keys.first!
+                var afterEqualsTo = ""
+                if let index = fullString.range(of: "_", options: .backwards)?.upperBound {
+                    afterEqualsTo = String(fullString.suffix(from: index))
+                }
+        
+                if ("\(afterEqualsTo)" == "Text"){
                     return 120
-                }else if (dynamicArray[indexPath.row]["File"] != nil){
+                }else if ("\(afterEqualsTo)" == "File"){
                     return 220
-                }else if (dynamicArray[indexPath.row]["Date"] != nil){
+                }else if ("\(afterEqualsTo)" == "Date"){
                     return 120
                     
-                }else if (dynamicArray[indexPath.row]["Dropdown"] != nil){
+                }else if ("\(afterEqualsTo)" == "Dropdown"){
                     return 120
-                }else if (dynamicArray[indexPath.row]["SingleChoice"] != nil){
-                    let singleChoiceValue = dynamicArray[indexPath.row]["SingleChoice"]! as? [[String:Any]]
+                }else if ("\(afterEqualsTo)" == "SingleChoice"){
+                    let singleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                     let singleChoiceOptionValue = singleChoiceValue![1]["option"]! as? [String]
                     return 80 + CGFloat(40 * singleChoiceOptionValue!.count)
-                }else if (dynamicArray[indexPath.row]["MultipleChoice"] != nil){
-                    let multipleChoiceValue = dynamicArray[indexPath.row]["MultipleChoice"]! as? [[String:Any]]
+                }else if ("\(afterEqualsTo)" == "MultipleChoice"){
+                    let multipleChoiceValue = dynamicArray[indexPath.row]["\(fullString)"]! as? [[String:Any]]
                     let multipleChoiceOptionValue = multipleChoiceValue![1]["option"]! as? [String]
                     return 80 + CGFloat(40 * multipleChoiceOptionValue!.count)
                 }else{

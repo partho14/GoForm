@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0F676A29C08FCD00823676 /* MultipleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0F676929C08FCD00823676 /* MultipleImageTableViewCell.swift */; };
 		0E11AC8229825550003AFBD5 /* DropdownOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11AC8129825550003AFBD5 /* DropdownOptionTableViewCell.swift */; };
 		0E11AC842982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11AC832982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift */; };
 		0E13FDBA295425160064038A /* MyServeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E13FDB9295425160064038A /* MyServeyViewController.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0F676929C08FCD00823676 /* MultipleImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImageTableViewCell.swift; sourceTree = "<group>"; };
 		0E11AC8129825550003AFBD5 /* DropdownOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownOptionTableViewCell.swift; sourceTree = "<group>"; };
 		0E11AC832982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceOptionTableViewCell.swift; sourceTree = "<group>"; };
 		0E13FDB9295425160064038A /* MyServeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServeyViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				0E935B6A29950C5A002C4864 /* FormFillupSingleChoiceSubTableViewCell.swift */,
 				0E935B6C29950C75002C4864 /* FormFillupMultipleChoiceSubTableViewCell.swift */,
 				0ECC7A7229A74F1C005196B9 /* FormServeyListTableViewCell.swift */,
+				0E0F676929C08FCD00823676 /* MultipleImageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				0E70933D29557D75008530F8 /* ServeyListDetailsTableViewCell.swift in Sources */,
 				0E709339295573B9008530F8 /* SubServeyListTableViewCell.swift in Sources */,
 				0E935B692994F9F3002C4864 /* FormFillupMultipleChoiceTableViewCell.swift in Sources */,
+				0E0F676A29C08FCD00823676 /* MultipleImageTableViewCell.swift in Sources */,
 				0E66D9A62987E14A00913D7E /* ForgorPasswordViewController.swift in Sources */,
 				0E11AC842982A51E003AFBD5 /* SingleChoiceOptionTableViewCell.swift in Sources */,
 				0E13FDC429548A830064038A /* MainServeyListTableViewCell.swift in Sources */,

@@ -94,6 +94,18 @@ class MainViewController: UIViewController {
             emailTittleLbl.textAlignment = .center
         }
     }
+    @IBOutlet weak var shareUniqueCodeTittleLbl: UILabel!{
+        didSet{
+            self.shareUniqueCodeTittleLbl.font = UIFont(name: "Barlow-Bold", size: 16.0)
+        }
+    }
+    
+    @IBOutlet weak var shareUrlTittleLbl: UILabel!{
+        didSet{
+            self.shareUrlTittleLbl.font = UIFont(name: "Barlow-Bold", size: 16.0)
+        }
+    }
+    
     
     @IBOutlet weak var searchBtnView: UIView!
     
@@ -115,6 +127,50 @@ class MainViewController: UIViewController {
     }
 
     @IBOutlet weak var emailAddConfirmBtn: UIView!
+    @IBOutlet weak var shareOptionView: UIView!
+    @IBOutlet weak var shareUniqueCodeView: UIView!{
+        didSet{
+            shareUniqueCodeView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var shareUrlView: UIView!{
+        didSet{
+            shareUrlView.layer.cornerRadius = 10
+        }
+    }
+    
+    
+    // Form code generate field
+    @IBOutlet weak var formCodeCreateView: UIView!{
+        didSet{
+            formCodeCreateView.layer.shadowColor = UIColor.black.cgColor
+            formCodeCreateView.layer.shadowOpacity = 1
+            formCodeCreateView.layer.shadowOffset = .zero
+            formCodeCreateView.layer.shadowRadius = 10
+                //formCodeCreateView.layer.shadowPath = UIBezierPath(rect: formCodeCreateView.bounds).cgPath
+            formCodeCreateView.layer.shouldRasterize = true
+            formCodeCreateView.layer.rasterizationScale = UIScreen.main.scale
+        }
+    }
+    @IBOutlet weak var formCodeShowView: UIView!{
+        didSet{
+            formCodeShowView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var formCodeCreateSubView: UIView!{
+        didSet{
+            formCodeCreateSubView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var formCodeTextField: UITextField!
+    @IBOutlet weak var formCodeTextFieldView: UIView!{
+        didSet{
+            formCodeTextFieldView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var showingCodeTextLbl: UILabel!
+    @IBOutlet weak var formCodeCreateErrorTextLbl: UILabel!
+    
     
     var navigationDrawer:NavigationDrawer!
     var retrievedEvent: [String] = []
@@ -137,14 +193,18 @@ class MainViewController: UIViewController {
     var allGmailArray: [DataSnapshot] = []
     var sharedUniqueId: String = ""
     var sharedFormName: String = ""
+    var sharingFormName: String = ""
     var singleFormName: String = ""
     var sharedGmailArray: [DataSnapshot] = []
     var totalServeyArray: [String] = []
+    var allFormUniqueCodeArray: [DataSnapshot] = []
+    var allFormUniqueCode: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.viewControllers = [self]
-        
+        self.shareOptionView.alpha = 0
+        self.formCodeCreateView.alpha = 0
         self.shareView.frame.size.height = self.view.frame.size.height
         self.shareView.frame.size.width = self.view.frame.size.width
         self.view.addSubview(shareView)
@@ -171,6 +231,7 @@ class MainViewController: UIViewController {
         navigationDrawer.setNavigationDrawerController(viewController: vc)
         NavigationDrawer.instance.initialize(forViewController: (appDelegate.window?.visibleViewController())!)
         self.emailAddConfirmBtn!.roundCorners([.topLeft, .topRight], radius: 20.0)
+        self.shareOptionView!.roundCorners([.topLeft, .topRight], radius: 20.0)
         let tapGesture = UITapGestureRecognizer(target: self,
                                  action: #selector(hideKeyboard))
                 view.addGestureRecognizer(tapGesture)
@@ -347,6 +408,104 @@ class MainViewController: UIViewController {
         self.gmailAddTextField.text? = ""
     }
     
+    @IBAction func shareOptionViewCancelBtn(_ sender: Any) {
+        self.shareOptionView.alpha = 0
+    }
+    
+    
+    @IBAction func shareUniqueCodeBtnPressed(_ sender: Any) {
+        self.formCodeTextField.text = ""
+        self.shareOptionView.alpha = 0
+        shareUniqueCodeFunction()
+    }
+    
+    @IBAction func shareUrlBtnPressed(_ sender: Any) {
+        self.shareOptionView.alpha = 0
+        shareUrlFunction()
+    }
+        
+    func shareUniqueCodeFunction() {
+        getAllFormUniqueCode()
+        self.formCodeCreateView.alpha = 1
+        self.formCodeCreateSubView.alpha = 1
+        self.formCodeCreateErrorTextLbl.alpha = 0
+        self.formCodeShowView.alpha = 0
+    }
+    
+    func shareUrlFunction() {
+        self.shareUrl = "com.goform://id=\(appDelegate.uniqueID!)\(sharingFormName)"
+        self.shareView.alpha = 0
+        UIPasteboard.general.string = self.shareUrl
+        self.exectURL = URL(string: "\(self.shareUrl)")
+        self.sharedObjects = [self.exectURL as AnyObject]
+        let activityViewController = UIActivityViewController(activityItems: self.sharedObjects , applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [ .airDrop]
+        activityViewController.isModalInPresentation = true
+        activityViewController.popoverPresentationController?.sourceView = UIView()
+        self.present(activityViewController, animated: true, completion: nil)
+        //self?.successUrlText.text = self?.shareUrl
+    }
+    
+    
+    // Form code generate field
+    @IBAction func formCreateViewCancelBtn(_ sender: Any) {
+        self.formCodeCreateView.alpha = 0
+    }
+    
+    @IBAction func formCodeCreateSubmitBtnPressed(_ sender: Any) {
+        if (self.formCodeTextField.text! == ""){
+            self.formCodeCreateErrorTextLbl.alpha = 1
+            self.formCodeCreateErrorTextLbl.text = "You can't submit empty name"
+            return
+        }
+        print(self.allFormUniqueCodeArray)
+        if self.allFormUniqueCodeArray.count > 0 {
+            for i in 0 ..< self.allFormUniqueCodeArray.count{
+                print("\(self.allFormUniqueCodeArray[i].key)")
+                if ("\(self.allFormUniqueCodeArray[i].key)" == "\(self.formCodeTextField.text!)"){
+                    self.check = 1
+                }
+            }
+        }
+        if self.check == 1 {
+            self.formCodeCreateErrorTextLbl.alpha = 1
+            self.formCodeCreateSubView.alpha = 1
+            self.formCodeShowView.alpha = 0
+            self.check = 0
+        }else{
+            self.formCodeCreateErrorTextLbl.alpha = 0
+            self.formCodeCreateSubView.alpha = 0
+            self.formCodeShowView.alpha = 1
+            self.showingCodeTextLbl.text = self.formCodeTextField.text
+            let path: String = "GlobalFormsUniqueCode/\(self.formCodeTextField.text!)"
+            self.ref.child(path).setValue("\(appDelegate.uniqueID!)\(sharingFormName)")
+        }
+    }
+    
+    @IBAction func formCodeCreateCopyBtnPressed(_ sender: Any) {
+        UIPasteboard.general.string = self.formCodeTextField.text
+        self.formCodeTextField.text = ""
+        self.formCodeCreateView.alpha = 0
+    }
+    
+    func getAllFormUniqueCode(){
+        LoadingIndicatorView.show()
+        self.check = 0
+        allFormUniqueCode.removeAll()
+        self.ref.child("GlobalFormsUniqueCode").queryOrderedByKey().observe(.value){ (snapshot) in
+            self.allFormUniqueCode.removeAll()
+            if (snapshot.value != nil){
+                for event in snapshot.children.allObjects {
+
+                    self.allFormUniqueCodeArray.append(event as! DataSnapshot)
+                }
+            }else{
+                
+            }
+            LoadingIndicatorView.hide()
+        }
+    }
+    
     
 }
 
@@ -484,18 +643,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.propleCountBtn.tag = indexPath.row + 1
             cell.showBtn.tag = indexPath.row + 1
             cell.didShare = { [weak self] tag in
-                self?.shareUrl = "com.goform://id=\(appDelegate.uniqueID!)\(self!.questionArray[indexPath.row].key)"
-                self?.shareView.alpha = 0
-                UIPasteboard.general.string = self!.shareUrl
-                self!.exectURL = URL(string: "\(self!.shareUrl)")
-                self?.sharedObjects = [self!.exectURL as AnyObject]
-                let activityViewController = UIActivityViewController(activityItems: self!.sharedObjects , applicationActivities: nil)
-                activityViewController.excludedActivityTypes = [ .airDrop]
-                activityViewController.isModalInPresentation = true
-                activityViewController.popoverPresentationController?.sourceView = UIView()
-                self?.present(activityViewController, animated: true, completion: nil)
-                //self?.successUrlText.text = self?.shareUrl
-                
+                self?.shareOptionView.alpha = 1
+                self!.sharingFormName = "\(self!.questionArray[indexPath.row].key)"
             }
             cell.didAdd = { [weak self] tag in
                 self?.sharedFormName = "\(appDelegate.uniqueID!)\(self!.questionArray[indexPath.row].key)"

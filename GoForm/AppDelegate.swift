@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var loadingIndicatorView: LoadingIndicatorView?
     var mainViewController: MainViewController?
     var formBuilderViewController: FormBuilderViewController?
+    var formFillupViewController: FormFillupViewController?
     var navigationDrawer: NavigationDrawer?
     var navigationDrawerOption: NavigationDrawerOptions?
     var drawerViewController: NavViewController?
@@ -87,6 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var peoplwServeyUniqueId : String = ""
     var sharedFormTotalView: Bool = false
     var appleSignIn : String = ""
+    var multipleImageGetUrl : String = ""
+    var hasImageValue: Bool = false
     
     var urlForm: Int = 0
     var check: Int = 0
@@ -118,6 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var formBuilderMultipleChoice: [String] = []
     var singleChoiceAnsIndex = 0
     var multipleChoiceStoreIndex: [Int] = []
+    var multiplePhotoStoreIndex: [String] = []
 
     var hasTopNotch: Bool {
         if #available(iOS 11.0, tvOS 11.0, *) {

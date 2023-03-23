@@ -270,26 +270,26 @@ extension SharedFormViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-                    if ("\(self.questionArray[indexPath.row].value!)" == "Yes"){
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let formBuilderViewController = storyboard.instantiateViewController(withIdentifier: "FormBuilderViewController") as? FormBuilderViewController
-                        self.navigationController?.pushViewController(formBuilderViewController!, animated: true)
-                        appDelegate.isSharedFormView = true
-                        appDelegate.isFullFormView = true
-                        let index = self.questionArray[indexPath.row].key.index(self.questionArray[indexPath.row].key.startIndex, offsetBy: 28)
-                        let subString = self.questionArray[indexPath.row].key.substring(from: index)
-                        let uniqueIdSubString = self.questionArray[indexPath.row].key.take(28)
-                        print(uniqueIdSubString)
-                        print(subString)
-                        appDelegate.shared = true
-                        appDelegate.sharedFormUniqueId = uniqueIdSubString
-                        appDelegate.formNameText = subString
-                    }else{
-                        appDelegate.myDatePicker.showSingleButtonAlert(message: "You have no permission to open or edit this form.", okText: "Ok", vc: self)
-                    }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//                    if ("\(self.questionArray[indexPath.row].value!)" == "Yes"){
+//                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                        let formBuilderViewController = storyboard.instantiateViewController(withIdentifier: "FormBuilderViewController") as? FormBuilderViewController
+//                        self.navigationController?.pushViewController(formBuilderViewController!, animated: true)
+//                        appDelegate.isSharedFormView = true
+//                        appDelegate.isFullFormView = true
+//                        let index = self.questionArray[indexPath.row].key.index(self.questionArray[indexPath.row].key.startIndex, offsetBy: 28)
+//                        let subString = self.questionArray[indexPath.row].key.substring(from: index)
+//                        let uniqueIdSubString = self.questionArray[indexPath.row].key.take(28)
+//                        print(uniqueIdSubString)
+//                        print(subString)
+//                        appDelegate.shared = true
+//                        appDelegate.sharedFormUniqueId = uniqueIdSubString
+//                        appDelegate.formNameText = subString
+//                    }else{
+//                        appDelegate.myDatePicker.showSingleButtonAlert(message: "You have no permission to open or edit this form.", okText: "Ok", vc: self)
+//                    }
+//    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
